@@ -40,8 +40,8 @@ dependencies:
   hive_flutter: ^1.1.0
   hive_generator: ^2.0.1
   json_annotation: ^4.9.0
-  json_serializable: ^6.11.1
-  retrofit: ^4.7.2
+  json_serializable: 
+  retrofit: 
   shared_preferences: ^2.5.3
 
 dev_dependencies:
