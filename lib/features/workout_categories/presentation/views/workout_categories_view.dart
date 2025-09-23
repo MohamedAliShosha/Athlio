@@ -1,3 +1,4 @@
+import 'package:athlio/features/workout_categories/presentation/widgets/custom_floating_action_button.dart';
 import 'package:flutter/material.dart';
 
 class WorkoutCategoriesView extends StatelessWidget {
@@ -11,60 +12,32 @@ class WorkoutCategoriesView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Placeholder for the green body grid
-            Center(
-              child: Wrap(
-                spacing: 4,
-                runSpacing: 4,
-                children: List.generate(
-                  30,
-                  (index) => Container(
-                    width: 20,
-                    height: 20,
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
+            Expanded(
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: 5,
+                itemBuilder: (context, index) => _buildCategoryButton(
+                  context,
+                  title: "Chest",
+                  onPressed: () {},
                 ),
               ),
             ),
-            const SizedBox(height: 40),
-
             // Upper body button
-            _buildCategoryButton(
-              context,
-              title: "UPPER BODY",
-              onPressed: () {},
-            ),
-
-            // Lower body button
-            _buildCategoryButton(
-              context,
-              title: "LOWER BODY",
-              onPressed: () {},
-            ),
           ],
         ),
       ),
 
-      // Floating Action Button -> opens New Workout Dialog
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (_) => const NewWorkoutDialog(),
-          );
-        },
-        child: const Icon(Icons.add),
-      ),
+      /// Floating Action Button -> opens New Workout Dialog
+      floatingActionButton: const CustomFloatingActionButton(),
     );
   }
 
   Widget _buildCategoryButton(BuildContext context,
       {required String title, required VoidCallback onPressed}) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.black,
@@ -77,63 +50,26 @@ class WorkoutCategoriesView extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Icon(Icons.fitness_center, color: Colors.white),
+            const Icon(
+              Icons.fitness_center_rounded,
+              color: Colors.white,
+              size: 30,
+            ),
             Text(
               title,
-              style: const TextStyle(fontSize: 16, color: Colors.white),
+              style: const TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            const Icon(Icons.arrow_forward_ios, color: Colors.white),
+            const Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.white,
+            ),
           ],
         ),
       ),
-    );
-  }
-}
-
-class NewWorkoutDialog extends StatelessWidget {
-  const NewWorkoutDialog({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final TextEditingController controller = TextEditingController();
-
-    return AlertDialog(
-      backgroundColor: Colors.black87,
-      title: const Text(
-        "New workout",
-        style: TextStyle(color: Colors.white),
-      ),
-      content: TextField(
-        controller: controller,
-        style: const TextStyle(color: Colors.white),
-        decoration: const InputDecoration(
-          hintText: "Workout name",
-          hintStyle: TextStyle(color: Colors.white54),
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.white54),
-          ),
-          focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.white),
-          ),
-        ),
-      ),
-      actions: [
-        TextButton(
-          onPressed: () => Navigator.pop(context),
-          child: const Text("Cancel", style: TextStyle(color: Colors.white)),
-        ),
-        ElevatedButton(
-          onPressed: () {
-            final workoutName = controller.text.trim();
-            if (workoutName.isNotEmpty) {
-              // Save workout logic here
-              Navigator.pop(context);
-            }
-          },
-          style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
-          child: const Text("Save"),
-        ),
-      ],
     );
   }
 }
