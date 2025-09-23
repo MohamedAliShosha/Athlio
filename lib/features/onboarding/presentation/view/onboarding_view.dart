@@ -1,6 +1,7 @@
 import 'package:athlio/core/routing/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:athlio/core/widgets/app_button.dart';
 
 class OnboardingView extends StatelessWidget {
   const OnboardingView({super.key});
@@ -21,9 +22,7 @@ class OnboardingView extends StatelessWidget {
                   "assets/images/vector-black-and-white-illustration-of-a-hand-with-dumbbell.jpg", // put your image in assets
                   height: 150,
                 ),
-
                 const SizedBox(height: 40),
-
                 const Text(
                   "Your Workout\nCompanion",
                   textAlign: TextAlign.center,
@@ -33,19 +32,14 @@ class OnboardingView extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-
                 const SizedBox(height: 15),
-
                 const Text(
                   "Track your daily workouts & watch your progress!",
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 14, color: Colors.black54),
                 ),
-
                 const SizedBox(height: 40),
-
-                // Reusable Button
-                CustomButton(
+                AppButton(
                   text: "Get Started",
                   onPressed: () {
                     // Navigate to login screen
@@ -55,34 +49,6 @@ class OnboardingView extends StatelessWidget {
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-/// Reusable Button
-class CustomButton extends StatelessWidget {
-  final String text;
-  final VoidCallback onPressed;
-
-  const CustomButton({super.key, required this.text, required this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.black,
-          padding: const EdgeInsets.symmetric(vertical: 15),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        ),
-        onPressed: onPressed,
-        child: Text(
-          text,
-          style: const TextStyle(color: Colors.white, fontSize: 16),
         ),
       ),
     );
