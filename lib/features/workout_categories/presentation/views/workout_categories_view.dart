@@ -21,7 +21,7 @@ class WorkoutCategoriesView extends StatelessWidget {
                 itemCount: 5,
                 itemBuilder: (context, index) => Slidable(
                   key: ValueKey(
-                      index), // value key is used to identify each widget in the list to be able to open the drawer
+                      index), // Each element in a ListView has a unique key using an index. This is important so that Flutter can differentiate between elements and keep the open drag state for each element.
                   endActionPane: ActionPane(
                     motion: const DrawerMotion(),
                     children: [
