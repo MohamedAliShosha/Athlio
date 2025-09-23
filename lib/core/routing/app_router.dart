@@ -1,6 +1,7 @@
 import 'package:athlio/features/login/presentation/views/login_view.dart';
 import 'package:athlio/features/onboarding/presentation/view/onboarding_view.dart';
 import 'package:athlio/features/sign_up/presentation/views/sign_up_view.dart';
+import 'package:athlio/features/workout_categories/presentation/views/workout_categories_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
