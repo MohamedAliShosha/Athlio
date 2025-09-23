@@ -52,6 +52,8 @@ class LoginViewBody extends StatelessWidget {
                 text: "Sign In",
                 onPressed: () {
                   // handle login
+                  GoRouter.of(context)
+                      .pushReplacement(AppRouter.kWorkoutCategoriesView);
                 },
               ),
 
