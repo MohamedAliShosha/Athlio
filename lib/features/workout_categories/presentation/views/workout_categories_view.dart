@@ -1,5 +1,7 @@
 import 'package:athlio/features/workout_categories/presentation/widgets/custom_floating_action_button.dart';
+import 'package:athlio/features/workout_categories/presentation/widgets/custom_workout_category_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class WorkoutCategoriesView extends StatelessWidget {
   const WorkoutCategoriesView({super.key});
@@ -17,10 +19,31 @@ class WorkoutCategoriesView extends StatelessWidget {
                 physics: const BouncingScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: 5,
-                itemBuilder: (context, index) => _buildCategoryButton(
-                  context,
-                  title: "Chest",
-                  onPressed: () {},
+                itemBuilder: (context, index) => Slidable(
+                  key: ValueKey(
+                      index), // Each element in a ListView has a unique key using an index. This is important so that Flutter can differentiate between elements and keep the open drag state for each element.
+                  endActionPane: ActionPane(
+                    motion: const DrawerMotion(),
+                    children: [
+                      CustomSlidableAction(
+                        onPressed: (context) {},
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          width: 100,
+                          height: 60,
+                          alignment: Alignment.center,
+                          child: const Icon(Icons.delete, color: Colors.black),
+                        ),
+                      ),
+                    ],
+                  ),
+                  child: CustomWorkoutCategoryItem(
+                    title: "Chest",
+                    onPressed: () {},
+                  ),
                 ),
               ),
             ),
@@ -31,45 +54,6 @@ class WorkoutCategoriesView extends StatelessWidget {
 
       /// Floating Action Button -> opens New Workout Dialog
       floatingActionButton: const CustomFloatingActionButton(),
-    );
-  }
-
-  Widget _buildCategoryButton(BuildContext context,
-      {required String title, required VoidCallback onPressed}) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.black,
-          minimumSize: const Size(double.infinity, 60),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-          ),
-        ),
-        onPressed: onPressed,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Icon(
-              Icons.fitness_center_rounded,
-              color: Colors.white,
-              size: 30,
-            ),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 16,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const Icon(
-              Icons.arrow_forward_ios,
-              color: Colors.white,
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
