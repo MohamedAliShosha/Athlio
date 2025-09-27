@@ -2,12 +2,15 @@ import 'package:athlio/features/login/presentation/views/login_view.dart';
 import 'package:athlio/features/onboarding/presentation/view/onboarding_view.dart';
 import 'package:athlio/features/sign_up/presentation/views/sign_up_view.dart';
 import 'package:athlio/features/workout_categories/presentation/views/workout_categories_view.dart';
+import 'package:athlio/features/workout_category_details/presentation/views/workout_category_details_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
   static const String kLoginView = '/loginView';
   static const String kSignUpView = '/signUpView';
   static const String kWorkoutCategoriesView = '/workoutCategoriesView';
+  static const String kWorkoutCategoryDetailsView =
+      '/workoutCategoryDetailsView';
   static final router = GoRouter(
     routes: [
       // Define your routes here
@@ -26,6 +29,10 @@ abstract class AppRouter {
       GoRoute(
         path: kWorkoutCategoriesView,
         builder: (context, state) => const WorkoutCategoriesView(),
+      ),
+      GoRoute(
+        path: kWorkoutCategoryDetailsView,
+        builder: (context, state) => const WorkoutCategoryDetailsView(),
       ),
     ],
   );

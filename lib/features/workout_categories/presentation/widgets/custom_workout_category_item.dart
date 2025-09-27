@@ -1,3 +1,4 @@
+import 'package:athlio/core/functions/build_snack_bar.dart';
 import 'package:flutter/material.dart';
 
 class CustomWorkoutCategoryItem extends StatelessWidget {
@@ -23,10 +24,12 @@ class CustomWorkoutCategoryItem extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Icon(
-              Icons.fitness_center_rounded,
-              color: Colors.white,
-              size: 30,
+            const Text(
+              '25/9/2025',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+              ),
             ),
             Text(
               title,
@@ -34,6 +37,17 @@ class CustomWorkoutCategoryItem extends StatelessWidget {
                 fontSize: 16,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  buildSnackBar(message: "Deleted Successfully"),
+                );
+              },
+              icon: const Icon(
+                Icons.delete,
+                color: Colors.red,
               ),
             ),
             const Icon(

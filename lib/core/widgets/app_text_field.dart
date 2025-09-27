@@ -23,6 +23,7 @@ class _AppTextFieldState extends State<AppTextField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      cursorColor: Colors.black,
       keyboardType: widget.keyboardType,
       onTapOutside: (event) {
         FocusScope.of(context).unfocus();
