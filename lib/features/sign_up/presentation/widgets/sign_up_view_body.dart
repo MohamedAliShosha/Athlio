@@ -66,6 +66,7 @@ class SignUpViewBody extends StatelessWidget {
               text: "Sign Up",
               onPressed: () {
                 // Handle sign up logic
+                GoRouter.of(context).go(AppRouter.kWorkoutCategoriesView);
               },
             ),
 
