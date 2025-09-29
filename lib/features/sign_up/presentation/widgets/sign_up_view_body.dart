@@ -13,7 +13,7 @@ class SignUpViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 40),
+        padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 100),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -22,12 +22,12 @@ class SignUpViewBody extends StatelessWidget {
             const SizedBox(height: 20),
             const Text(
               "Create Account",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
             const Text(
               "Sign up to get started",
-              style: TextStyle(fontSize: 14, color: Colors.black54),
+              style: TextStyle(fontSize: 16, color: Colors.black54),
             ),
 
             const SizedBox(height: 30),
@@ -60,7 +60,7 @@ class SignUpViewBody extends StatelessWidget {
               isPassword: true,
             ),
 
-            const SizedBox(height: 25),
+            const SizedBox(height: 20),
             // Sign Up Button
             AppButton(
               text: "Sign Up",
@@ -71,37 +71,15 @@ class SignUpViewBody extends StatelessWidget {
             ),
 
             const SizedBox(height: 30),
-            // Row(
-            //   children: [
-            //     Expanded(
-            //       child: Divider(thickness: 0.5, color: Colors.grey[400]),
-            //     ),
-            //     Padding(
-            //       padding: const EdgeInsets.symmetric(horizontal: 10),
-            //       child: Text("Or sign up with",
-            //           style: TextStyle(color: Colors.grey[700])),
-            //     ),
-            //     Expanded(
-            //       child: Divider(thickness: 0.5, color: Colors.grey[400]),
-            //     ),
-            //   ],
-            // ),
-
-            // const SizedBox(height: 25),
-            // const Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     SocialButton(icon: Icons.g_mobiledata),
-            //     SizedBox(width: 20),
-            //     SocialButton(icon: Icons.facebook),
-            //   ],
-            // ),
-
-            // const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("Already have an account? "),
+                const Text(
+                  "Already have an account? ",
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
                 GestureDetector(
                   onTap: () {
                     // Navigate to Login Screen
@@ -111,6 +89,7 @@ class SignUpViewBody extends StatelessWidget {
                     "Sign In",
                     style: TextStyle(
                       color: Colors.blue,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
