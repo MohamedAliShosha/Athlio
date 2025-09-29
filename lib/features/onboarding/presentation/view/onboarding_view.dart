@@ -43,9 +43,9 @@ class OnboardingView extends StatelessWidget {
                   text: "Get Started",
                   onPressed: () {
                     // Navigate to login screen
-                    GoRouter.of(context).push(AppRouter.kLoginView);
+                    GoRouter.of(context).go(AppRouter.kLoginView);
                   },
-                )
+                ),
               ],
             ),
           ),

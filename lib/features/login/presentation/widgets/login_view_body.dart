@@ -51,8 +51,8 @@ class LoginViewBody extends StatelessWidget {
                 text: "Sign In",
                 onPressed: () {
                   // handle login
-                  GoRouter.of(context)
-                      .pushReplacement(AppRouter.kWorkoutCategoriesView);
+                  // go => Navigates to the new screen and remove the current screen from the stack better with go_router than pushReplacement as it keeps the state of the current screen if I exist the app and return back the last opened screen will be displayed
+                  GoRouter.of(context).go(AppRouter.kWorkoutCategoriesView);
                 },
               ),
 
