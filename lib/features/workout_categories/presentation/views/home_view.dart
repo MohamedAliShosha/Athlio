@@ -32,12 +32,12 @@ class _HomeViewState extends State<HomeView> {
 
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: Colors.black87,
+      backgroundColor: Colors.white,
       elevation: 0,
       leading: IconButton(
           icon: const Icon(
             Icons.menu,
-            color: Colors.white,
+            color: Colors.black,
           ),
           onPressed: () {
             scaffoldKey.currentState!.openDrawer();

@@ -36,7 +36,7 @@ class OnboardingView extends StatelessWidget {
                 const Text(
                   "Track your daily workouts & watch your progress!",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 14, color: Colors.black54),
+                  style: TextStyle(fontSize: 20, color: Colors.black54),
                 ),
                 const SizedBox(height: 40),
                 AppButton(

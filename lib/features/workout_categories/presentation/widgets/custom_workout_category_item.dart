@@ -28,13 +28,13 @@ class CustomWorkoutCategoryItem extends StatelessWidget {
               '25/9/2025',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 18,
+                fontSize: 20,
               ),
             ),
             Text(
               title,
               style: const TextStyle(
-                fontSize: 16,
+                fontSize: 18,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),

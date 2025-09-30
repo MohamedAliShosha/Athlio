@@ -14,7 +14,7 @@ class LoginViewBody extends StatelessWidget {
     return SafeArea(
       child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 40),
+          padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 100),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -22,7 +22,7 @@ class LoginViewBody extends StatelessWidget {
               const SizedBox(height: 20),
               const Text(
                 "Welcome back you've been missed!",
-                style: TextStyle(fontSize: 16, color: Colors.black87),
+                style: TextStyle(fontSize: 18, color: Colors.black87),
               ),
               const SizedBox(height: 25),
               // Email Field
@@ -37,14 +37,7 @@ class LoginViewBody extends StatelessWidget {
                 hintText: "Password",
                 isPassword: true,
               ),
-              // const SizedBox(height: 10),
-              // Align(
-              //   alignment: Alignment.centerRight,
-              //   child: Text(
-              //     "Forgot Password?",
-              //     style: TextStyle(color: Colors.grey[600]),
-              //   ),
-              // ),
+
               const SizedBox(height: 20),
               // Login Button
               AppButton(
@@ -56,39 +49,14 @@ class LoginViewBody extends StatelessWidget {
                 },
               ),
 
-              // const SizedBox(height: 30),
-              // Row(
-              //   children: [
-              //     Expanded(
-              //       child: Divider(thickness: 0.5, color: Colors.grey[400]),
-              //     ),
-              //     Padding(
-              //       padding: const EdgeInsets.symmetric(horizontal: 10),
-              //       child: Text("Or continue with",
-              //           style: TextStyle(color: Colors.grey[700])),
-              //     ),
-              //     Expanded(
-              //       child: Divider(thickness: 0.5, color: Colors.grey[400]),
-              //     ),
-              //   ],
-              // ),
-
-              // const SizedBox(height: 25),
-              // // Social Login Buttons
-              // const Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     SocialButton(icon: Icons.g_mobiledata),
-              //     SizedBox(width: 20),
-              //     SocialButton(icon: Icons.facebook),
-              //   ],
-              // ),
-
               const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Not a member? "),
+                  const Text(
+                    "Not a member? ",
+                    style: TextStyle(fontSize: 18),
+                  ),
                   GestureDetector(
                     onTap: () {
                       GoRouter.of(context)
@@ -98,6 +66,7 @@ class LoginViewBody extends StatelessWidget {
                       "Register now",
                       style: TextStyle(
                         color: Colors.blue,
+                        fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
