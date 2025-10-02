@@ -1,6 +1,5 @@
 import 'package:athlio/core/routing/app_router.dart';
 import 'package:athlio/core/widgets/app_button.dart';
-import 'package:athlio/core/widgets/app_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -33,32 +32,32 @@ class SignUpViewBody extends StatelessWidget {
             const SizedBox(height: 30),
 
             // Full Name
-            const AppTextField(
-              hintText: "Full Name",
-              isPassword: false,
-            ),
+            // const AppTextFormField(
+            //   hintText: "Full Name",
+            //   isPassword: false,
+            // ),
             const SizedBox(height: 15),
 
             // Email
-            const AppTextField(
-              keyboardType: TextInputType.emailAddress,
-              hintText: "Email",
-              isPassword: false,
-            ),
+            // const AppTextFormField(
+            //   keyboardType: TextInputType.emailAddress,
+            //   hintText: "Email",
+            //   isPassword: false,
+            // ),
             const SizedBox(height: 15),
 
             // Password
-            const AppTextField(
-              hintText: "Password",
-              isPassword: true,
-            ),
+            // const AppTextFormField(
+            //   hintText: "Password",
+            //   isPassword: true,
+            // ),
             const SizedBox(height: 15),
 
             // Confirm Password
-            const AppTextField(
-              hintText: "Confirm Password",
-              isPassword: true,
-            ),
+            // const AppTextFormField(
+            //   hintText: "Confirm Password",
+            //   isPassword: true,
+            // ),
 
             const SizedBox(height: 20),
             // Sign Up Button
@@ -66,7 +65,7 @@ class SignUpViewBody extends StatelessWidget {
               text: "Sign Up",
               onPressed: () {
                 // Handle sign up logic
-                GoRouter.of(context).go(AppRouter.kWorkoutCategoriesView);
+                GoRouter.of(context).go(AppRouter.kHomeView);
               },
             ),
 

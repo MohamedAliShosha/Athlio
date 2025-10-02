@@ -1,10 +1,10 @@
-import 'package:athlio/features/workout_category_details/presentation/widgets/exercise_card.dart';
-import 'package:athlio/features/workout_category_details/presentation/widgets/exercise_details_dialog.dart';
+import 'package:athlio/features/home_details/presentation/widgets/exercise_card.dart';
+import 'package:athlio/features/home_details/presentation/widgets/exercise_details_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class WorkoutCategoryDetailsView extends StatelessWidget {
-  const WorkoutCategoryDetailsView({super.key});
+class HomeDetailsView extends StatelessWidget {
+  const HomeDetailsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class WorkoutCategoryDetailsView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
           title: const Text(
@@ -39,7 +39,7 @@ class WorkoutCategoryDetailsView extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          backgroundColor: Colors.black87,
+          backgroundColor: Colors.white,
         ),
         body: const Padding(
           padding: EdgeInsets.all(16),

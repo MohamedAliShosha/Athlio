@@ -1,4 +1,4 @@
-import 'package:athlio/features/workout_category_details/presentation/widgets/exercise_details_dialog_text_field.dart';
+import 'package:athlio/features/home_details/presentation/widgets/exercise_details_dialog_text_field.dart';
 import 'package:flutter/material.dart';
 
 class NewWorkoutDialog extends StatelessWidget {
@@ -15,7 +15,7 @@ class NewWorkoutDialog extends StatelessWidget {
         style: TextStyle(color: Colors.white),
       ),
       content: ExerciseDetailsDialogTextField(
-          controller: controller, hintText: 'New workout name'),
+          controller: controller, hintText: 'workout name / اسم التمرين'),
       actions: [
         ElevatedButton(
           onPressed: () => Navigator.pop(context),

@@ -1,6 +1,6 @@
-import 'package:athlio/features/workout_categories/presentation/widgets/custom_drawer.dart';
-import 'package:athlio/features/workout_categories/presentation/widgets/home_view_body.dart';
-import 'package:athlio/features/workout_categories/presentation/widgets/custom_floating_action_button.dart';
+import 'package:athlio/features/home/presentation/widgets/custom_drawer.dart';
+import 'package:athlio/features/home/presentation/widgets/home_view_body.dart';
+import 'package:athlio/features/home/presentation/widgets/custom_floating_action_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {

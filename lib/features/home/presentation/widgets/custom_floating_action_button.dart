@@ -1,4 +1,4 @@
-import 'package:athlio/features/workout_categories/presentation/widgets/new_workout_dialog.dart';
+import 'package:athlio/features/home/presentation/widgets/new_workout_dialog.dart';
 import 'package:flutter/material.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {

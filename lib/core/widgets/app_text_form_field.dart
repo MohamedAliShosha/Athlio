@@ -1,28 +1,35 @@
 import 'package:flutter/material.dart';
 
 /// Reusable TextField
-class AppTextField extends StatefulWidget {
+class AppTextFormField extends StatefulWidget {
   final String hintText;
   final bool isPassword;
   final TextInputType keyboardType;
+  final TextEditingController controller;
+  final String? Function(String?)? validator;
 
-  const AppTextField({
+  const AppTextFormField({
     super.key,
     required this.hintText,
     this.isPassword = false,
     this.keyboardType = TextInputType.text,
+    required this.controller,
+    this.validator,
   });
 
   @override
-  State<AppTextField> createState() => _AppTextFieldState();
+  State<AppTextFormField> createState() => _AppTextFormFieldState();
 }
 
-class _AppTextFieldState extends State<AppTextField> {
+class _AppTextFormFieldState extends State<AppTextFormField> {
   // changing fields are written at State object part.
   bool _obscureText = true;
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      validator: widget.validator,
+      controller: widget.controller,
       cursorColor: Colors.black,
       keyboardType: widget.keyboardType,
       onTapOutside: (event) {

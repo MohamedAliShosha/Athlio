@@ -1,3 +1,4 @@
+import 'package:athlio/core/di/service_locator.dart';
 import 'package:athlio/core/routing/app_router.dart';
 import 'package:flutter/material.dart';
 
@@ -17,5 +18,6 @@ class Athlio extends StatelessWidget {
 }
 
 void main() {
+  setupServiceLocator();
   runApp(const Athlio());
 }
