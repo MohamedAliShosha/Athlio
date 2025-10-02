@@ -1,5 +1,5 @@
 import 'package:athlio/core/functions/build_snack_bar.dart';
-import 'package:athlio/features/workout_category_details/presentation/widgets/tag_widget.dart';
+import 'package:athlio/features/home_details/presentation/widgets/tag_widget.dart';
 import 'package:flutter/material.dart';
 
 class ExerciseCard extends StatefulWidget {

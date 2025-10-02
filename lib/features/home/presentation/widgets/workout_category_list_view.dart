@@ -1,5 +1,5 @@
 import 'package:athlio/core/routing/app_router.dart';
-import 'package:athlio/features/workout_categories/presentation/widgets/custom_workout_category_item.dart';
+import 'package:athlio/features/home/presentation/widgets/custom_workout_category_item.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

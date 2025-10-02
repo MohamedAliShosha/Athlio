@@ -1,4 +1,4 @@
-import 'package:athlio/features/workout_category_details/presentation/widgets/exercise_details_dialog_text_field.dart';
+import 'package:athlio/features/home_details/presentation/widgets/exercise_details_dialog_text_field.dart';
 import 'package:flutter/material.dart';
 
 class ExerciseDetailsDialog extends StatelessWidget {

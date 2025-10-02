@@ -29,12 +29,14 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.8
+  dartz: ^0.10.1
   dio: ^5.9.0
+  email_validator: ^3.0.0
   flutter:
     sdk: flutter
-  flutter_bloc: ^9.1.1
+  flutter_bloc: null
   flutter_secure_storage: ^9.2.4
-  flutter_slidable: 
+  flutter_slidable: null
   get_it: ^8.2.0
   go_router: null
   go_transitions: ^0.8.2
@@ -43,6 +45,7 @@ dependencies:
   hive_generator: ^2.0.1
   json_annotation: ^4.9.0
   json_serializable: null
+  pretty_dio_logger: ^1.4.0
   retrofit: null
   shared_preferences: ^2.5.3
 
