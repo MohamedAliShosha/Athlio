@@ -1,5 +1,5 @@
 import 'package:athlio/core/routing/app_router.dart';
-import 'package:athlio/core/widgets/app_button.dart';
+import 'package:athlio/features/sign_up/presentation/widgets/sign_up_form.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -17,7 +17,6 @@ class SignUpViewBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Icon(Icons.person, size: 80, color: Colors.black),
-
             const SizedBox(height: 20),
             const Text(
               "Create Account",
@@ -28,47 +27,8 @@ class SignUpViewBody extends StatelessWidget {
               "Sign up to get started",
               style: TextStyle(fontSize: 16, color: Colors.black54),
             ),
-
             const SizedBox(height: 30),
-
-            // Full Name
-            // const AppTextFormField(
-            //   hintText: "Full Name",
-            //   isPassword: false,
-            // ),
-            const SizedBox(height: 15),
-
-            // Email
-            // const AppTextFormField(
-            //   keyboardType: TextInputType.emailAddress,
-            //   hintText: "Email",
-            //   isPassword: false,
-            // ),
-            const SizedBox(height: 15),
-
-            // Password
-            // const AppTextFormField(
-            //   hintText: "Password",
-            //   isPassword: true,
-            // ),
-            const SizedBox(height: 15),
-
-            // Confirm Password
-            // const AppTextFormField(
-            //   hintText: "Confirm Password",
-            //   isPassword: true,
-            // ),
-
-            const SizedBox(height: 20),
-            // Sign Up Button
-            AppButton(
-              text: "Sign Up",
-              onPressed: () {
-                // Handle sign up logic
-                GoRouter.of(context).go(AppRouter.kHomeView);
-              },
-            ),
-
+            const SignUpForm(),
             const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

@@ -5,6 +5,8 @@ import 'package:athlio/features/onboarding/presentation/view/onboarding_view.dar
 import 'package:athlio/features/profile/presentation/views/profile_view.dart';
 import 'package:athlio/features/home/presentation/views/home_view.dart';
 import 'package:athlio/features/home_details/presentation/views/home_details_view.dart';
+import 'package:athlio/features/sign_up/presentation/manager/sign_up/sign_up_cubit.dart';
+import 'package:athlio/features/sign_up/presentation/views/sign_up_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
@@ -29,10 +31,13 @@ abstract class AppRouter {
           child: const LoginView(),
         ),
       ),
-      // GoRoute(
-      //   path: kSignUpView,
-      //   builder: (context, state) => const SignUpView(),
-      // ),
+      GoRoute(
+        path: kSignUpView,
+        builder: (context, state) => BlocProvider(
+          create: (context) => getIt<SignUpCubit>(),
+          child: const SignUpView(),
+        ),
+      ),
       GoRoute(
         path: kHomeView,
         builder: (context, state) => const HomeView(),
