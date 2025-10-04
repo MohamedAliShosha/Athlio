@@ -20,7 +20,7 @@ class SignUpRepoImplement implements SignUpRepo {
       return Right(response);
     } on DioException catch (e) {
       return Left(
-        ApiErrorModel.fromJson(e.response?.data),
+        ApiErrorModel.fromJson(e.response?.data as Map<String, dynamic>),
       );
     }
   }

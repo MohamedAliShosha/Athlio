@@ -8,6 +8,7 @@ SnackBar buildSnackBar({required String message}) {
         message,
         style: const TextStyle(
           fontWeight: FontWeight.bold,
+          fontSize: 18,
         ),
       ),
     ),

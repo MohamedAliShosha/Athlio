@@ -104,10 +104,10 @@ class _SignUpFormState extends State<SignUpForm> {
               return AppButton(
                 isLoading: state is SignUpLoading,
                 text: "Sign Up",
-                onPressed: () {
+                onPressed: () async {
                   // Handle sign up logic
                   if (_formKey.currentState!.validate()) {
-                    context.read<SignUpCubit>().signUp(
+                    await context.read<SignUpCubit>().signUp(
                           SignUpRequestBody(
                             email: emailController.text.trim(),
                             password: passwordController.text.trim(),
@@ -116,7 +116,6 @@ class _SignUpFormState extends State<SignUpForm> {
                           ),
                         );
                   }
-                  // GoRouter.of(context).go(AppRouter.kHomeView);
                 },
               );
             },

@@ -22,6 +22,7 @@ class SignUpBlocListener extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(
             buildSnackBar(message: state.signUpResponseModel.message),
           );
+          // GoRouter.of(context).go(AppRouter.kEmailVerification);
         }
       },
     );
