@@ -1,4 +1,4 @@
-import 'package:athlio/core/networking/api_constants.dart';
+import 'package:athlio/core/utils/constants.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -6,7 +6,7 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 class DioFactory {
   final Dio _dio = Dio(); // Dio instance
   DioFactory() {
-    _dio.options.baseUrl = ApiConstants.baseUrl;
+    _dio.options.baseUrl = Constants.baseUrl;
     _dio.options.connectTimeout = const Duration(minutes: 1);
     _dio.options.receiveTimeout = const Duration(minutes: 1);
     _dio.options.sendTimeout = const Duration(minutes: 5);
