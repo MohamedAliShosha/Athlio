@@ -1,6 +1,8 @@
+import 'package:athlio/core/functions/build_app_bar.dart';
 import 'package:athlio/core/routing/app_router.dart';
 import 'package:athlio/core/utils/shared_pref_helper.dart';
 import 'package:athlio/core/utils/shared_pref_keys.dart';
+import 'package:athlio/features/profile/presentation/widgets/custom_log_out_alert_dialog.dart';
 import 'package:athlio/features/profile/presentation/widgets/custom_profile_circle_avatar.dart';
 import 'package:athlio/features/profile/presentation/widgets/custom_user_info_container.dart';
 import 'package:flutter/material.dart';
@@ -49,22 +51,7 @@ class _ProfileViewState extends State<ProfileView> {
      */
     final bool shouldLogout = await showDialog(
           context: context,
-          builder: (context) => AlertDialog(
-            title: const Text('Confirm Logout'),
-            content: const Text('Are you sure you want to logout?'),
-            actions: [
-              TextButton(
-                // return false if dialog is dismissed
-                onPressed: () => Navigator.pop(context, false),
-                child: const Text('Cancel'),
-              ),
-              TextButton(
-                // return true if user clicks "Logout"
-                onPressed: () => Navigator.pop(context, true),
-                child: const Text('Logout'),
-              ),
-            ],
-          ),
+          builder: (context) => const CustomLogOutAlertDialog(),
         ) ??
         // Default to false if dialog is dismissed
         false;
@@ -136,9 +123,9 @@ class _ProfileViewState extends State<ProfileView> {
     return SafeArea(
       child: Scaffold(
         // backgroundColor: Colors.black,
-        appBar: AppBar(
-          elevation: 0,
-          leading: IconButton(
+        appBar: buildAppBar(
+          context,
+          leadingWidget: IconButton(
             onPressed: () {
               GoRouter.of(context).pop();
             },
@@ -186,6 +173,7 @@ class _ProfileViewState extends State<ProfileView> {
     );
   }
 }
+
 /*
  1 => Initial Trigger:
   - When user taps the Logout button in `CustomUserInfoContainer`, the `_handleLogout()` method is called.
