@@ -10,6 +10,6 @@ part 'login_service.g.dart';
 abstract class LoginService {
   factory LoginService(Dio dio, {String? baseUrl}) = _LoginService;
 
-  @POST('/login')
+  @POST('/auth/login')
   Future<LoginResponseModel> login(@Body() LoginRequestBody loginRequestBody);
 }

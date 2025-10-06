@@ -1,4 +1,5 @@
 import 'package:athlio/core/routing/app_router.dart';
+import 'package:athlio/core/utils/shared_pref_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:athlio/core/widgets/app_button.dart';
@@ -43,7 +44,9 @@ class OnboardingView extends StatelessWidget {
                   text: "Get Started",
                   onPressed: () {
                     // Navigate to login screen
-                    GoRouter.of(context).go(AppRouter.kLoginView);
+                    isLoggedInUser
+                        ? GoRouter.of(context).go(AppRouter.kHomeView)
+                        : GoRouter.of(context).go(AppRouter.kLoginView);
                   },
                 ),
               ],

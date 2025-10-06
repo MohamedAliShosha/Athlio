@@ -1,7 +1,9 @@
 import 'package:athlio/core/functions/build_snack_bar.dart';
+import 'package:athlio/core/routing/app_router.dart';
 import 'package:athlio/features/sign_up/presentation/manager/sign_up/sign_up_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class SignUpBlocListener extends StatelessWidget {
   const SignUpBlocListener({super.key});
@@ -14,7 +16,11 @@ class SignUpBlocListener extends StatelessWidget {
         if (state is SignUpFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
             buildSnackBar(
-                message: state.apiErrorModel.errors.entries.first.value.first),
+              message: state.apiErrorModel.data != null &&
+                      state.apiErrorModel.data!.entries.isNotEmpty
+                  ? state.apiErrorModel.data!.entries.first.value.first
+                  : 'An unknown error occurred.',
+            ),
           );
         } else if (state is SignUpSuccess) {
           // go => Navigates to the new screen and remove the current screen from the stack better with go_router than pushReplacement as it keeps the state of the current screen if I exist the app and return back the last opened screen will be displayed
@@ -22,7 +28,7 @@ class SignUpBlocListener extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(
             buildSnackBar(message: state.signUpResponseModel.message),
           );
-          // GoRouter.of(context).go(AppRouter.kEmailVerification);
+          GoRouter.of(context).go(AppRouter.kLoginView);
         }
       },
     );

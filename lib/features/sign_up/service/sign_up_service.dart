@@ -10,7 +10,7 @@ part 'sign_up_service.g.dart';
 abstract class SignUpService {
   factory SignUpService(Dio dio, {String? baseUrl}) = _SignUpService;
 
-  @POST('/register')
+  @POST('/auth/register')
   Future<SignUpResponseModel> signUp(
       @Body() SignUpRequestBody signUpRequestBody);
 }

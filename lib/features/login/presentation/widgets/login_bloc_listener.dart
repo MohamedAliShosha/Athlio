@@ -15,8 +15,7 @@ class LoginBlocListener extends StatelessWidget {
       listener: (context, state) {
         if (state is LoginError) {
           ScaffoldMessenger.of(context).showSnackBar(
-            buildSnackBar(
-                message: state.apiErrorModel.errors.entries.first.value.first),
+            buildSnackBar(message: state.loginApiErrorModel.message),
           );
         } else if (state is LoginSuccess) {
           // go => Navigates to the new screen and remove the current screen from the stack better with go_router than pushReplacement as it keeps the state of the current screen if I exist the app and return back the last opened screen will be displayed

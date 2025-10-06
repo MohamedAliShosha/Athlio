@@ -37,7 +37,7 @@ class _LoginFormState extends State<LoginForm> {
           AppTextFormField(
             validator: (data) {
               if (data == null || data.isEmpty) {
-                return 'Please enter your email';
+                return 'This field is required';
               }
               if (!EmailValidator.validate(data)) {
                 return 'Please enter a valid email address';
@@ -54,7 +54,7 @@ class _LoginFormState extends State<LoginForm> {
           AppTextFormField(
             validator: (data) {
               if (data == null || data.isEmpty) {
-                return 'Please enter your password';
+                return 'This field is required';
               } else if (data.length < 6) {
                 return "Password must be at least 6 characters";
               }

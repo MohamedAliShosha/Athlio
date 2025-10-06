@@ -1,4 +1,4 @@
-import 'package:athlio/core/networking/api_error_model.dart';
+import 'package:athlio/features/login/data/models/login_api_error_model.dart';
 import 'package:athlio/features/login/data/models/login_request_body.dart';
 import 'package:athlio/features/login/data/models/login_response.dart';
 import 'package:athlio/features/login/data/repos/login_repo.dart';
@@ -12,7 +12,7 @@ class LoginRepoImplement implements LoginRepo {
   LoginRepoImplement(this.loginService);
 
   @override
-  Future<Either<ApiErrorModel, LoginResponseModel>> login({
+  Future<Either<LoginApiErrorModel, LoginResponseModel>> login({
     required LoginRequestBody loginRequestBody,
   }) async {
     try {
@@ -20,7 +20,7 @@ class LoginRepoImplement implements LoginRepo {
       return Right(response);
     } on DioException catch (e) {
       return Left(
-        ApiErrorModel.fromJson(e.response?.data),
+        LoginApiErrorModel.fromJson(e.response?.data),
       );
     }
   }

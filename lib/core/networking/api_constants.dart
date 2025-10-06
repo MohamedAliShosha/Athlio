@@ -1,3 +1,3 @@
 class ApiConstants {
-  static const String baseUrl = 'https://accessories-eshop.runasp.net/api/auth';
+  static const String baseUrl = 'https://vcare.integration25.com/api';
 }

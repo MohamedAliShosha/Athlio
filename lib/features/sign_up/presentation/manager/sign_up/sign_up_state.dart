@@ -14,7 +14,7 @@ final class SignUpSuccess extends SignUpState {
 }
 
 final class SignUpFailure extends SignUpState {
-  final ApiErrorModel apiErrorModel;
+  final SignUpErrorModel apiErrorModel;
 
   SignUpFailure(this.apiErrorModel);
 }

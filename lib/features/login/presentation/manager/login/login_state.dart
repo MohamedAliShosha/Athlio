@@ -14,7 +14,7 @@ final class LoginSuccess extends LoginState {
 }
 
 final class LoginError extends LoginState {
-  final ApiErrorModel apiErrorModel;
+  final LoginApiErrorModel loginApiErrorModel;
 
-  LoginError({required this.apiErrorModel});
+  LoginError({required this.loginApiErrorModel});
 }
