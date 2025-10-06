@@ -5,31 +5,41 @@ class CustomLogOutAlertDialog extends StatelessWidget {
     super.key,
     required this.titleText,
     required this.contentText,
-    required this.cancelButton,
-    required this.logoutButton,
+    required this.cancelButtonText,
+    required this.logoutButtonText,
+    required this.dialogBackgroundColor,
+    required this.titleTextColor,
+    required this.contentTextColor,
+    required this.cancelButtonColor,
+    required this.logoutButtonColor,
   });
 
   final String titleText;
   final String contentText;
-  final String cancelButton;
-  final String logoutButton;
+  final String cancelButtonText;
+  final String logoutButtonText;
+  final Color dialogBackgroundColor;
+  final Color titleTextColor;
+  final Color contentTextColor;
+  final Color cancelButtonColor;
+  final Color logoutButtonColor;
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Colors.black87,
+      backgroundColor: dialogBackgroundColor,
       title: Text(
         titleText,
-        style: const TextStyle(
-          color: Colors.white,
+        style: TextStyle(
+          color: titleTextColor,
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
       ),
       content: Text(
         contentText,
-        style: const TextStyle(
-          color: Colors.white,
+        style: TextStyle(
+          color: contentTextColor,
           fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
@@ -39,9 +49,9 @@ class CustomLogOutAlertDialog extends StatelessWidget {
           // return false if dialog is dismissed
           onPressed: () => Navigator.pop(context, false),
           child: Text(
-            cancelButton,
-            style: const TextStyle(
-              color: Colors.white,
+            cancelButtonText,
+            style: TextStyle(
+              color: cancelButtonColor,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
@@ -51,9 +61,9 @@ class CustomLogOutAlertDialog extends StatelessWidget {
           // return true if user clicks "Logout"
           onPressed: () => Navigator.pop(context, true),
           child: Text(
-            logoutButton,
-            style: const TextStyle(
-              color: Colors.red,
+            logoutButtonText,
+            style: TextStyle(
+              color: logoutButtonColor,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),

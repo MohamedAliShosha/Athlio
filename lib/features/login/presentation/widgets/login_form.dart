@@ -47,7 +47,6 @@ class _LoginFormState extends State<LoginForm> {
             controller: emailController,
             keyboardType: TextInputType.emailAddress,
             hintText: "Email",
-            isPassword: false,
           ),
           const SizedBox(height: 15),
           // Password Field

@@ -35,13 +35,14 @@ class _HomeViewState extends State<HomeView> {
       backgroundColor: Colors.white,
       elevation: 0,
       leading: IconButton(
-          icon: const Icon(
-            Icons.menu,
-            color: Colors.black,
-          ),
-          onPressed: () {
-            scaffoldKey.currentState!.openDrawer();
-          }),
+        icon: const Icon(
+          Icons.menu,
+          color: Colors.black,
+        ),
+        onPressed: () {
+          scaffoldKey.currentState!.openDrawer();
+        },
+      ),
     );
   }
 }

@@ -52,8 +52,13 @@ class _ProfileViewState extends State<ProfileView> {
     final bool shouldLogout = await showDialog(
           context: context,
           builder: (context) => const CustomLogOutAlertDialog(
-            logoutButton: 'Logout',
-            cancelButton: 'Cancel',
+            logoutButtonColor: Colors.red,
+            cancelButtonColor: Colors.white,
+            contentTextColor: Colors.white,
+            titleTextColor: Colors.white,
+            dialogBackgroundColor: Colors.black87,
+            logoutButtonText: 'Logout',
+            cancelButtonText: 'Cancel',
             titleText: 'Confirm Logout',
             contentText: 'Are you sure you want to logout?',
           ),
