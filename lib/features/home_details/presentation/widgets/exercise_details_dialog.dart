@@ -12,7 +12,7 @@ class ExerciseDetailsDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Colors.black87,
+      backgroundColor: Colors.black,
       content: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
@@ -51,7 +51,7 @@ class ExerciseDetailsDialog extends StatelessWidget {
               Navigator.pop(context);
             }
           },
-          style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
           child: const Text(
             "Save",
             style: TextStyle(color: Colors.black),

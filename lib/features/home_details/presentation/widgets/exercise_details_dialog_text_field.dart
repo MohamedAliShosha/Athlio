@@ -5,14 +5,20 @@ class ExerciseDetailsDialogTextField extends StatelessWidget {
     super.key,
     required this.controller,
     required this.hintText,
+    this.validator,
+    this.autovalidateMode,
   });
 
   final TextEditingController controller;
   final String hintText;
+  final String? Function(String?)? validator;
+  final AutovalidateMode? autovalidateMode;
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: validator,
+      autovalidateMode: autovalidateMode,
       cursorColor: Colors.white,
       controller: controller,
       style: const TextStyle(color: Colors.white),
@@ -23,7 +29,9 @@ class ExerciseDetailsDialogTextField extends StatelessWidget {
           borderSide: BorderSide(color: Colors.white54),
         ),
         focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
+          borderSide: BorderSide(
+            color: Colors.white,
+          ),
         ),
       ),
     );
