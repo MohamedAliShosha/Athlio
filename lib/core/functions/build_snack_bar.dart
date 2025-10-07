@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 SnackBar buildSnackBar({required String message}) {
   return SnackBar(
+    duration: const Duration(milliseconds: 500),
     backgroundColor: Colors.black,
     content: Center(
       child: Text(

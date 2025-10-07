@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'categories_model.dart';
+part of 'workout_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class CategoriesModelAdapter extends TypeAdapter<CategoriesModel> {
+class WorkoutModelAdapter extends TypeAdapter<WorkoutModel> {
   @override
   final int typeId = 0;
 
   @override
-  CategoriesModel read(BinaryReader reader) {
+  WorkoutModel read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return CategoriesModel(
+    return WorkoutModel(
       workoutName: fields[0] as String,
-      date: fields[1] as DateTime,
+      date: fields[1] as String,
     );
   }
 
   @override
-  void write(BinaryWriter writer, CategoriesModel obj) {
+  void write(BinaryWriter writer, WorkoutModel obj) {
     writer
       ..writeByte(2)
       ..writeByte(0)
@@ -38,7 +38,7 @@ class CategoriesModelAdapter extends TypeAdapter<CategoriesModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is CategoriesModelAdapter &&
+      other is WorkoutModelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

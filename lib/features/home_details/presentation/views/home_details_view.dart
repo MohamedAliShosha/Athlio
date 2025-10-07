@@ -14,7 +14,7 @@ class HomeDetailsView extends StatelessWidget {
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
           shape: const CircleBorder(),
-          backgroundColor: Colors.black87,
+          backgroundColor: Colors.black,
           onPressed: () {
             showDialog(
                 context: context,

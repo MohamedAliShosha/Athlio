@@ -1,6 +1,6 @@
 import 'package:athlio/features/home/presentation/widgets/custom_drawer.dart';
 import 'package:athlio/features/home/presentation/widgets/home_view_body.dart';
-import 'package:athlio/features/home/presentation/widgets/custom_floating_action_button.dart';
+import 'package:athlio/features/home/presentation/widgets/add_workout_floating_action_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -25,7 +25,7 @@ class _HomeViewState extends State<HomeView> {
         body: const HomeViewBody(),
 
         /// Floating Action Button -> opens New Workout Dialog
-        floatingActionButton: const CustomFloatingActionButton(),
+        floatingActionButton: const AddWorkoutFloatingActionButton(),
       ),
     );
   }

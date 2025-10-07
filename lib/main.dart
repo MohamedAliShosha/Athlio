@@ -3,7 +3,7 @@ import 'package:athlio/core/utils/constants.dart';
 import 'package:athlio/core/routing/app_router.dart';
 import 'package:athlio/core/utils/shared_pref_helper.dart';
 import 'package:athlio/core/utils/shared_pref_keys.dart';
-import 'package:athlio/features/home/data/models/categories_model.dart';
+import 'package:athlio/features/home/data/models/workout_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -39,8 +39,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupServiceLocator();
   await Hive.initFlutter(); // Initializing Hive
-  await Hive.openBox(Constants.workoutCategoriesBox);
-  Hive.registerAdapter(CategoriesModelAdapter()); // Registering Hive adapter
+  // Registering Hive adapter
+  Hive.registerAdapter(WorkoutModelAdapter());
+  await Hive.openBox<WorkoutModel>(Constants.workoutCategoriesBox);
   await checkIfUserIsLoggedIn();
   runApp(const Athlio());
 }
