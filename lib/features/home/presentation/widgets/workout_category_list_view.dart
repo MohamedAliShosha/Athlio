@@ -41,8 +41,9 @@ class _WorkoutCategoriesListViewState extends State<WorkoutCategoriesListView> {
             itemBuilder: (context, index) => CustomWorkoutCategoryItem(
               workoutModel: addWorkoutCubit.workoutsList[index],
               onPressed: () {
-                GoRouter.of(context)
-                    .push(AppRouter.kWorkoutCategoryDetailsView);
+                // Navigating to the new screen based on each screen id
+                GoRouter.of(context).push(
+                    '${AppRouter.kWorkoutCategoryDetailsView}/${addWorkoutCubit.workoutsList[index].id}');
               },
             ),
           ),

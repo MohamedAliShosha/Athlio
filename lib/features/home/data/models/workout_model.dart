@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+import 'package:uuid/uuid.dart';
 
 part 'workout_model.g.dart';
 
@@ -8,6 +9,10 @@ class WorkoutModel extends HiveObject {
   final String workoutName;
   @HiveField(1)
   final String date;
+  @HiveField(2)
+  String? id;
 
-  WorkoutModel({required this.workoutName, required this.date});
+  WorkoutModel({required this.workoutName, required this.date, String? id})
+      // Creating a unique id for each added model
+      : id = id ?? const Uuid().v4();
 }

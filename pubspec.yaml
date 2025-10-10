@@ -48,10 +48,11 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   retrofit: null
   shared_preferences: ^2.5.3
+  uuid: ^4.5.1
 
 dev_dependencies:
-  flutter_launcher_icons: 
   build_runner: ^2.4.6
+  flutter_launcher_icons: null
   flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
@@ -91,8 +92,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
-
-
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
