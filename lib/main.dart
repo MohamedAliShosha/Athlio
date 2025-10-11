@@ -4,8 +4,8 @@ import 'package:athlio/core/routing/app_router.dart';
 import 'package:athlio/core/utils/shared_pref_helper.dart';
 import 'package:athlio/core/utils/shared_pref_keys.dart';
 import 'package:athlio/features/home/data/models/workout_model.dart';
+import 'package:athlio/features/home_details/data/models/exercise_details_model.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 
 class Athlio extends StatelessWidget {
@@ -39,9 +39,14 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupServiceLocator();
   await Hive.initFlutter(); // Initializing Hive
-  // Registering Hive adapter
+  // Registering Hive adapter of the first model
   Hive.registerAdapter(WorkoutModelAdapter());
+  // Registering Hive adapter of the second model
+  Hive.registerAdapter(ExerciseModelAdapter());
+  // Opening the first box
   await Hive.openBox<WorkoutModel>(Constants.workoutCategoriesBox);
+  // Opening the second box
+  await Hive.openBox<ExerciseModel>(Constants.exerciseDetailsBox);
   await checkIfUserIsLoggedIn();
   runApp(const Athlio());
 }

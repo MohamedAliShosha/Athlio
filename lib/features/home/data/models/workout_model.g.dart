@@ -19,17 +19,20 @@ class WorkoutModelAdapter extends TypeAdapter<WorkoutModel> {
     return WorkoutModel(
       workoutName: fields[0] as String,
       date: fields[1] as String,
+      id: fields[2] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, WorkoutModel obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.workoutName)
       ..writeByte(1)
-      ..write(obj.date);
+      ..write(obj.date)
+      ..writeByte(2)
+      ..write(obj.id);
   }
 
   @override

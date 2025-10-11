@@ -5,8 +5,6 @@ sealed class WorkoutState {}
 
 final class AddWorkoutInitial extends WorkoutState {}
 
-final class AddWorkoutLoading extends WorkoutState {}
-
 final class AddWorkoutSuccess extends WorkoutState {
   final List<WorkoutModel> workoutsList;
 

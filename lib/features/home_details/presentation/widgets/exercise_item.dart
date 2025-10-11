@@ -1,24 +1,23 @@
 import 'package:athlio/core/functions/build_snack_bar.dart';
+import 'package:athlio/features/home_details/data/models/exercise_details_model.dart';
+import 'package:athlio/features/home_details/presentation/manager/exercise_cubit/exercise_cubit.dart';
 import 'package:athlio/features/home_details/presentation/widgets/tag_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ExerciseCard extends StatefulWidget {
-  final String exerciseName;
-  final List<String> tags;
+class ExerciseItem extends StatefulWidget {
+  final ExerciseModel exerciseModel;
 
-  const ExerciseCard({
+  const ExerciseItem({
     super.key,
-    required this.exerciseName,
-    required this.tags,
+    required this.exerciseModel,
   });
 
   @override
-  State<ExerciseCard> createState() => _ExerciseCardState();
+  State<ExerciseItem> createState() => _ExerciseItemState();
 }
 
-class _ExerciseCardState extends State<ExerciseCard> {
-  bool isChecked = false;
-
+class _ExerciseItemState extends State<ExerciseItem> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -31,7 +30,9 @@ class _ExerciseCardState extends State<ExerciseCard> {
             // Margin is the space between the container and the widgets around it.
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: isChecked ? Colors.green : Colors.grey.shade200,
+              color: widget.exerciseModel.isDone
+                  ? Colors.green
+                  : Colors.grey.shade200,
               borderRadius: BorderRadius.circular(16),
             ),
             child: Row(
@@ -43,7 +44,7 @@ class _ExerciseCardState extends State<ExerciseCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        widget.exerciseName,
+                        widget.exerciseModel.exerciseName,
                         style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -52,11 +53,25 @@ class _ExerciseCardState extends State<ExerciseCard> {
                       ),
                       const SizedBox(height: 10),
                       // By default, the wrap layout is horizontal and both the children and the runs are aligned to the start.
-                      Wrap(
-                        spacing: 8,
-                        children:
-                            widget.tags.map((tag) => buildTag(tag)).toList(),
-                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            TagWidget(
+                              tagTitle: widget.exerciseModel.weight,
+                            ),
+                            const SizedBox(width: 16),
+                            TagWidget(
+                              tagTitle: widget.exerciseModel.numberOfReps,
+                            ),
+                            const SizedBox(width: 16),
+                            TagWidget(
+                              tagTitle: widget.exerciseModel.numberOfSets,
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -66,15 +81,22 @@ class _ExerciseCardState extends State<ExerciseCard> {
                   children: [
                     // Checkbox
                     Checkbox(
-                      value: isChecked,
+                      value: widget.exerciseModel.isDone,
                       // checkBox background color when it is checked
                       activeColor: Colors.white,
                       // check sign color
                       checkColor: Colors.green,
-                      onChanged: (value) {
+                      onChanged: (value) async {
                         setState(() {
-                          isChecked = value ?? false;
+                          // Update the checkbox value if the value is done it will be passed to isDone attribute of ExerciseModel
+                          widget.exerciseModel.isDone = value ?? false;
                         });
+                        // To keep the data saved even when the app is restarted
+                        await widget.exerciseModel.save();
+                        // To stay async with the UI
+                        BlocProvider.of<ExerciseCubit>(context)
+                            .getExercisesByWorkoutId(
+                                widget.exerciseModel.workoutId);
                       },
                     ),
                     // Action buttons row
@@ -82,7 +104,11 @@ class _ExerciseCardState extends State<ExerciseCard> {
                       icon:
                           const Icon(Icons.delete, color: Colors.red, size: 25),
                       onPressed: () {
-                        // TODO: Delete action
+                        widget.exerciseModel.delete();
+                        BlocProvider.of<ExerciseCubit>(context)
+                            .getExercisesByWorkoutId(
+                          widget.exerciseModel.workoutId,
+                        );
                         ScaffoldMessenger.of(context).showSnackBar(
                           buildSnackBar(message: "Deleted successfully!"),
                         );

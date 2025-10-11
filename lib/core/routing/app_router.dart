@@ -1,5 +1,6 @@
 import 'package:athlio/core/di/service_locator.dart';
 import 'package:athlio/features/home/presentation/manager/add_workout/add_workout_cubit.dart';
+import 'package:athlio/features/home_details/presentation/manager/exercise_cubit/exercise_cubit.dart';
 import 'package:athlio/features/login/presentation/manager/login/login_cubit.dart';
 import 'package:athlio/features/login/presentation/views/login_view.dart';
 import 'package:athlio/features/onboarding/presentation/view/onboarding_view.dart';
@@ -47,8 +48,18 @@ abstract class AppRouter {
         ),
       ),
       GoRoute(
-        path: kWorkoutCategoryDetailsView,
-        builder: (context, state) => const HomeDetailsView(),
+        // Defines a dynamic route that can carry an ID
+        path: '$kWorkoutCategoryDetailsView/:workoutId',
+        builder: (context, state) {
+          // Extracts the workout ID from the route
+          final workoutId =
+              state.pathParameters['workoutId']!; // getting the id
+          return BlocProvider(
+            create: (context) =>
+                ExerciseCubit()..getExercisesByWorkoutId(workoutId),
+            child: HomeDetailsView(workoutId: workoutId), //  passing id
+          );
+        },
       ),
       GoRoute(
         path: kProfileView,

@@ -15,18 +15,16 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        drawer: const CustomDrawer(),
+    return Scaffold(
+      drawer: const CustomDrawer(),
 
-        key: scaffoldKey,
-        appBar: buildAppBar(),
-        backgroundColor: Colors.white,
-        body: const HomeViewBody(),
+      key: scaffoldKey,
+      appBar: buildAppBar(),
+      backgroundColor: Colors.white,
+      body: const HomeViewBody(),
 
-        /// Floating Action Button -> opens New Workout Dialog
-        floatingActionButton: const AddWorkoutFloatingActionButton(),
-      ),
+      /// Floating Action Button -> opens New Workout Dialog
+      floatingActionButton: const AddWorkoutFloatingActionButton(),
     );
   }
 
