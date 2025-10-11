@@ -31,9 +31,14 @@ class CustomDrawer extends StatelessWidget {
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.fitness_center, color: Colors.white),
-                      title: Text(
+                    ListTile(
+                      onTap: () {
+                        context.pop();
+                        context.push(AppRouter.kWorkoutSplitsView);
+                      },
+                      leading:
+                          const Icon(Icons.fitness_center, color: Colors.white),
+                      title: const Text(
                         "Workout splits",
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),

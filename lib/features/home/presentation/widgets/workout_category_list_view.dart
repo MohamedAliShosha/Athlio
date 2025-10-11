@@ -43,6 +43,8 @@ class _WorkoutCategoriesListViewState extends State<WorkoutCategoriesListView> {
               onPressed: () {
                 // Navigating to the new screen based on each screen id
                 GoRouter.of(context).push(
+                    // Passing the model which contains the data that I want to pass to the next screen
+                    extra: addWorkoutCubit.workoutsList[index],
                     '${AppRouter.kWorkoutCategoryDetailsView}/${addWorkoutCubit.workoutsList[index].id}');
               },
             ),
