@@ -15,7 +15,7 @@ class Athlio extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       theme: ThemeData(
-        fontFamily: 'Playfair Display',
+        fontFamily: 'Montserrat',
       ),
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
