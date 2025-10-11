@@ -34,7 +34,7 @@ class CustomWorkoutCategoryItem extends StatelessWidget {
               workoutModel.date,
               style: const TextStyle(
                 color: Colors.white,
-                fontSize: 20,
+                fontSize: 18,
               ),
             ),
 
@@ -45,7 +45,7 @@ class CustomWorkoutCategoryItem extends StatelessWidget {
                   workoutModel.workoutName,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
-                    fontSize: 18,
+                    fontSize: 20,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
