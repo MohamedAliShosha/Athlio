@@ -14,7 +14,7 @@ class TagWidget extends StatelessWidget {
       ),
       child: Text(
         tagTitle,
-        style: const TextStyle(color: Colors.white, fontSize: 12),
+        style: const TextStyle(color: Colors.white, fontSize: 16),
       ),
     );
   }

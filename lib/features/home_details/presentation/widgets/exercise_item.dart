@@ -46,7 +46,7 @@ class _ExerciseItemState extends State<ExerciseItem> {
                       Text(
                         widget.exerciseModel.exerciseName,
                         style: const TextStyle(
-                          fontSize: 16,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),

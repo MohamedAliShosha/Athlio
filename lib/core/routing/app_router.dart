@@ -1,4 +1,5 @@
 import 'package:athlio/core/di/service_locator.dart';
+import 'package:athlio/features/home/data/models/workout_model.dart';
 import 'package:athlio/features/home/presentation/manager/add_workout/add_workout_cubit.dart';
 import 'package:athlio/features/home_details/presentation/manager/exercise_cubit/exercise_cubit.dart';
 import 'package:athlio/features/login/presentation/manager/login/login_cubit.dart';
@@ -57,7 +58,9 @@ abstract class AppRouter {
           return BlocProvider(
             create: (context) =>
                 ExerciseCubit()..getExercisesByWorkoutId(workoutId),
-            child: HomeDetailsView(workoutId: workoutId), //  passing id
+            child: HomeDetailsView(
+                workoutId: workoutId,
+                workoutModel: state.extra as WorkoutModel), //  passing id
           );
         },
       ),
