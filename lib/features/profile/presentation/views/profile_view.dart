@@ -1,10 +1,10 @@
 import 'package:athlio/core/functions/build_app_bar.dart';
 import 'package:athlio/core/routing/app_router.dart';
+import 'package:athlio/core/utils/app_colors.dart';
 import 'package:athlio/core/utils/shared_pref_helper.dart';
 import 'package:athlio/core/utils/shared_pref_keys.dart';
 import 'package:athlio/features/profile/presentation/widgets/custom_log_out_alert_dialog.dart';
 import 'package:athlio/features/profile/presentation/widgets/custom_profile_circle_avatar.dart';
-import 'package:athlio/features/profile/presentation/widgets/custom_user_info_container.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -16,18 +16,21 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
-  // We convert the state to stateful widget to manage the state as getting userName is an async operation
+  // Variables to store user data retrieved from SharedPreferences
   String? userName;
   String? userEmail;
 
-  // To get the userData when the widget is initialized
+  // To manage logout loading state
+  bool _isLoggingOut = false;
+
   @override
-  initState() {
+  void initState() {
     super.initState();
+    // Load user data when the widget initializes
     _loadUserData();
   }
 
-  // This method to loadUserData from SharedPreferences
+  /// Loads user name and email asynchronously from SharedPreferences
   Future<void> _loadUserData() async {
     final name = await SharedPrefHelper.getString(SharedPrefKeys.userName);
     final email = await SharedPrefHelper.getString(SharedPrefKeys.userEmail);
@@ -37,142 +40,163 @@ class _ProfileViewState extends State<ProfileView> {
     });
   }
 
-  // Add state variable for loading
-  bool _isLoggingOut = false;
-
-// Logout handler method with confirmation dialog and error handling
+  /// Handles logout logic with confirmation dialog and error handling
   Future<void> _handleLogout() async {
-    // Show confirmation dialog and get user's choice
     /*
-    - Shows a dialog asking user to confirm logout.
-    - Returns `true` if user clicks "Logout".
-    - Returns `false` if user clicks "Cancel" or dismisses dialog
-    - Uses null-coalescing operator (`??`) to default to `false` if dialog is dismissed.
-     */
+      Step 1: Show confirmation dialog to confirm logout
+      - Returns `true` if user clicks "Logout"
+      - Returns `false` if user clicks "Cancel" or dismisses the dialog
+      - Uses null-coalescing operator (??) to default to `false` if dialog dismissed
+    */
     final bool shouldLogout = await showDialog(
           context: context,
           builder: (context) => const CustomLogOutAlertDialog(
-            logoutButtonColor: Colors.red,
-            cancelButtonColor: Colors.white,
-            contentTextColor: Colors.white,
-            titleTextColor: Colors.white,
-            dialogBackgroundColor: Colors.black87,
+            logoutButtonColor: Colors.redAccent,
+            cancelButtonColor: AppColors.kWhiteColor,
+            contentTextColor: AppColors.kWhiteColor,
+            titleTextColor: AppColors.kWhiteColor,
+            dialogBackgroundColor: AppColors.kBlack87Color,
             logoutButtonText: 'Logout',
             cancelButtonText: 'Cancel',
             titleText: 'Confirm Logout',
             contentText: 'Are you sure you want to logout?',
           ),
         ) ??
-        // Default to false if dialog is dismissed
         false;
-    /* 
-    - This is called an "early return pattern" - it helps avoid nested if statements and makes the code cleaner by handling the negative case first.
 
-    - The return statement immediately exits the _handleLogout() method without executing any further code.
-
-    - When user cancels:
-    - shouldLogout = false
-    - !shouldLogout = true
-
-   Scenario 1: User clicks "Logout"
-   shouldLogout = true
-   !shouldLogout = false
-   if (false) return → NOT executed
-   Continue to next block ✅
-  
-   Scenario 2: User clicks "Cancel"
-   shouldLogout = false
-   !shouldLogout = true
-   if (true) return → Method stops here ❌
-   Next block never runs
-
-   Completing the first scenario explanation:
-    Dialog Result:
-   shouldLogout = true
-
-2. Guard Clause Check:
-   !shouldLogout = !true = false
-   if (false) return → NOT executed
-
-3. Code Continues:
-   - Sets loading state (true)
-   - Clears user data
-   - Navigates to login
-   - Handles any errors
-   - Resets loading state (false)
-
-*/
+    /*
+      Step 2: Use an early return pattern
+      - If user cancels logout (shouldLogout = false), 
+        exit the function immediately to avoid executing further code
+    */
     if (!shouldLogout) return;
 
+    // Step 3: Start logout process (show loading state)
     setState(() => _isLoggingOut = true);
 
     try {
+      // Step 4: Clear stored user data
       await SharedPrefHelper.clearAllData();
-      // mounted means that the widget is still in the tree
-      if (mounted) {
-        GoRouter.of(context).go(AppRouter.kLoginView);
-      }
+
+      // Step 5: Navigate back to login screen after logout
+      if (mounted) GoRouter.of(context).go(AppRouter.kLoginView);
     } catch (e) {
+      // Step 6: Handle any potential errors during logout
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Logout failed. Please try again.'),
-            backgroundColor: Colors.red,
+            backgroundColor: Colors.redAccent,
           ),
         );
       }
     } finally {
-      if (mounted) {
-        setState(() => _isLoggingOut = false);
-      }
+      // Step 7: Reset loading state once logout attempt finishes
+      if (mounted) setState(() => _isLoggingOut = false);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: buildAppBar(
-          context,
-          leadingWidget: IconButton(
-            onPressed: () {
-              GoRouter.of(context).pop();
-            },
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black87,
-            ),
-          ),
+    final theme = Theme.of(context);
+
+    return Scaffold(
+      backgroundColor: Colors.grey.shade50,
+      appBar: buildAppBar(
+        context,
+        leadingWidget: IconButton(
+          onPressed: () => GoRouter.of(context).pop(),
+          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black87),
         ),
-        body: Padding(
-          padding: const EdgeInsets.only(top: 8.0),
+        title: 'My Profile',
+      ),
+
+      // Scrollable content for better layout on smaller devices
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              // ===== Profile Picture =====
               const CustomProfileCircleAvatar(),
-              const SizedBox(height: 50),
-              CustomUserInfoContainer(
-                rightPadding: 40,
-                leftPadding: 40,
-                text: userName ?? 'No Name available',
+              const SizedBox(height: 20),
+
+              // ===== User Name =====
+              Text(
+                userName ?? 'No Name Available',
+                style: theme.textTheme.headlineSmall?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
+              ),
+              const SizedBox(height: 6),
+
+              // ===== User Email =====
+              Text(
+                userEmail ?? 'No Email Available',
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  color: Colors.grey.shade600,
+                ),
+              ),
+              const SizedBox(height: 30),
+
+              // ===== User Info Card (Styled container for info rows) =====
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12.withOpacity(0.05),
+                      blurRadius: 8,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    // Each row shows one info field (icon + label + value)
+                    _buildInfoRow(Icons.person_outline, "Username",
+                        userName ?? "No Name"),
+                    const Divider(height: 25, thickness: 0.8),
+                    _buildInfoRow(
+                        Icons.email_outlined, "Email", userEmail ?? "No Email"),
+                  ],
+                ),
               ),
               const SizedBox(height: 50),
-              CustomUserInfoContainer(
-                rightPadding: 40,
-                leftPadding: 40,
-                text: userEmail ?? 'No Email available',
-              ),
-              const SizedBox(height: 100),
-              GestureDetector(
-                onTap: () {
-                  // If already logging out, do nothing else handle logout
-                  _isLoggingOut ? null : _handleLogout();
-                },
-                child: CustomUserInfoContainer(
-                  // If already logging out, show "Logging out..." else show "Logout"
-                  text: _isLoggingOut ? 'Logging out...' : 'Logout',
-                  rightPadding: 100,
-                  leftPadding: 100,
+
+              // ===== Logout Button =====
+              ElevatedButton.icon(
+                // Disable button if already logging out
+                onPressed: _isLoggingOut ? null : _handleLogout,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.kBlackColor,
+                  minimumSize: const Size(double.infinity, 55),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                  elevation: 3,
+                ),
+
+                // Show loading spinner when logging out
+                icon: _isLoggingOut
+                    ? const SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: CircularProgressIndicator(
+                          color: AppColors.kWhiteColor,
+                          strokeWidth: 2,
+                        ),
+                      )
+                    : const Icon(Icons.logout, color: AppColors.kWhiteColor),
+
+                // Change button text dynamically
+                label: Text(
+                  _isLoggingOut ? 'Logging out...' : 'Logout',
+                  style: const TextStyle(
+                      color: AppColors.kWhiteColor, fontSize: 16),
                 ),
               ),
             ],
@@ -181,26 +205,41 @@ class _ProfileViewState extends State<ProfileView> {
       ),
     );
   }
+
+  /// Builds a consistent info row for displaying user data (e.g., name, email)
+  Widget _buildInfoRow(IconData icon, String label, String value) {
+    return Row(
+      children: [
+        Icon(icon, color: AppColors.kBlack54Color),
+        const SizedBox(width: 15),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Label (smaller gray text)
+              Text(
+                label,
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: AppColors.kGreyColor,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const SizedBox(height: 2),
+
+              // Value (larger, darker text)
+              Text(
+                value,
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: AppColors.kBlack87Color,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
 }
-
-/*
- 1 => Initial Trigger:
-  - When user taps the Logout button in `CustomUserInfoContainer`, the `_handleLogout()` method is called.
-
-  2 => Confirmation Dialog:
-    - Shows a dialog asking user to confirm logout.
-    - Returns `true` if user clicks "Logout".
-    - Returns `false` if user clicks "Cancel" or dismisses dialog
-    - Uses null-coalescing operator (`??`) to default to `false` if dialog is dismissed.
-
-  3 => Early Return Check:
-    - If `shouldLogout` is false (user cancelled), the method returns immediately.
-
-
-  4 => Loading State Management:
-    - Sets `_isLoggingOut` to true before starting logout process
-    - Updates UI to show "Logging out..." text
-    - Disables the logout button to prevent multiple taps
-
-
- */

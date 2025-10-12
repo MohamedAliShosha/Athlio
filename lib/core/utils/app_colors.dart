@@ -9,4 +9,5 @@ abstract class AppColors {
   static const kRedColor = Colors.red;
   static const kWhite54Color = Colors.white54;
   static const kGreenColor = Colors.green;
+  static const kGreyColor = Colors.grey;
 }
