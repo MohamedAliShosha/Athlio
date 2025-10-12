@@ -1,3 +1,5 @@
+import 'package:athlio/core/routing/app_router.dart';
+import 'package:athlio/core/utils/app_colors.dart';
 import 'package:athlio/core/widgets/app_button.dart';
 import 'package:athlio/core/widgets/app_text_form_field.dart';
 import 'package:athlio/features/sign_up/data/models/sign_up_request_body.dart';
@@ -6,6 +8,7 @@ import 'package:athlio/features/sign_up/presentation/widgets/sign_up_bloc_listen
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key});
@@ -90,8 +93,8 @@ class _SignUpFormState extends State<SignUpForm> {
               validator: (data) {
                 if (data == null || data.isEmpty) {
                   return 'This field is required';
-                } else if (data.length < 8) {
-                  return "Password must be at least 8 characters";
+                } else if (data.length < 6) {
+                  return "Password must be at least 6 characters";
                 }
                 return null; // Return null if the input is valid
               },
@@ -117,11 +120,12 @@ class _SignUpFormState extends State<SignUpForm> {
               hintText: "Password Confirmation",
               isPassword: true,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 50),
             // Sign Up Button
             BlocBuilder<SignUpCubit, SignUpState>(
               builder: (context, state) {
                 return AppButton(
+                  fontWeight: FontWeight.bold,
                   isLoading: state is SignUpLoading,
                   text: "Sign Up",
                   onPressed: () async {
@@ -143,7 +147,30 @@ class _SignUpFormState extends State<SignUpForm> {
                 );
               },
             ),
-
+            const SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "Already have an account? ",
+                  style: TextStyle(fontSize: 18, color: AppColors.kBlackColor),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    // Navigate to Login Screen
+                    GoRouter.of(context).pushReplacement(AppRouter.kLoginView);
+                  },
+                  child: const Text(
+                    "Sign In",
+                    style: TextStyle(
+                      color: AppColors.kBlueColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
             const SignUpBlocListener(),
             // Confirm Password
           ],

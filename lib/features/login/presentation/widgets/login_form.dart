@@ -1,4 +1,5 @@
 import 'package:athlio/core/routing/app_router.dart';
+import 'package:athlio/core/utils/app_colors.dart';
 import 'package:athlio/core/widgets/app_button.dart';
 import 'package:athlio/core/widgets/app_text_form_field.dart';
 import 'package:athlio/features/login/data/models/login_request_body.dart';
@@ -63,11 +64,12 @@ class _LoginFormState extends State<LoginForm> {
             hintText: "Password",
             isPassword: true,
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 100),
           // Login Button
           BlocBuilder<LoginCubit, LoginState>(
             builder: (context, state) {
               return AppButton(
+                fontWeight: FontWeight.bold,
                 isLoading: state is LoginLoading,
                 text: "Sign In",
                 onPressed: () {
@@ -90,7 +92,7 @@ class _LoginFormState extends State<LoginForm> {
             children: [
               const Text(
                 "Not a member? ",
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18, color: AppColors.kBlackColor),
               ),
               GestureDetector(
                 onTap: () {
@@ -99,7 +101,7 @@ class _LoginFormState extends State<LoginForm> {
                 child: const Text(
                   "Register now",
                   style: TextStyle(
-                    color: Colors.blue,
+                    color: AppColors.kBlueColor,
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),

@@ -1,3 +1,4 @@
+import 'package:athlio/core/utils/app_colors.dart';
 import 'package:athlio/features/home/presentation/widgets/custom_drawer.dart';
 import 'package:athlio/features/home/presentation/widgets/home_view_body.dart';
 import 'package:athlio/features/home/presentation/widgets/add_workout_floating_action_button.dart';
@@ -17,10 +18,8 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const CustomDrawer(),
-
       key: scaffoldKey,
       appBar: buildAppBar(),
-      backgroundColor: Colors.white,
       body: const HomeViewBody(),
 
       /// Floating Action Button -> opens New Workout Dialog
@@ -30,12 +29,12 @@ class _HomeViewState extends State<HomeView> {
 
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.kWhiteColor,
       elevation: 0,
       leading: IconButton(
         icon: const Icon(
           Icons.menu,
-          color: Colors.black,
+          color: AppColors.kBlack87Color,
         ),
         onPressed: () {
           scaffoldKey.currentState!.openDrawer();

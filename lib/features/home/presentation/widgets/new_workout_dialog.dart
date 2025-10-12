@@ -1,3 +1,4 @@
+import 'package:athlio/core/utils/app_colors.dart';
 import 'package:athlio/features/home/data/models/workout_model.dart';
 import 'package:athlio/features/home/presentation/manager/add_workout/add_workout_cubit.dart';
 import 'package:athlio/features/home_details/presentation/widgets/exercise_details_dialog_text_field.dart';
@@ -34,10 +35,10 @@ class _NewWorkoutDialogState extends State<NewWorkoutDialog> {
     return Form(
       key: formKey,
       child: AlertDialog(
-        backgroundColor: Colors.black,
+        backgroundColor: AppColors.kBlack87Color,
         title: const Text(
           "New workout",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: AppColors.kWhiteColor),
         ),
         content: ExerciseDetailsDialogTextField(
           validator: (data) {
@@ -53,7 +54,10 @@ class _NewWorkoutDialogState extends State<NewWorkoutDialog> {
         actions: [
           ElevatedButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text("Cancel", style: TextStyle(color: Colors.black)),
+            child: const Text(
+              "Cancel",
+              style: TextStyle(color: AppColors.kBlackColor),
+            ),
           ),
           ElevatedButton(
             onPressed: () async {
@@ -76,11 +80,11 @@ class _NewWorkoutDialogState extends State<NewWorkoutDialog> {
               }
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.green,
+              backgroundColor: AppColors.kGreenColor,
             ),
             child: const Text(
               "Save",
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: AppColors.kBlackColor),
             ),
           ),
         ],

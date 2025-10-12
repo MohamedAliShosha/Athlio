@@ -1,4 +1,5 @@
 import 'package:athlio/core/functions/build_snack_bar.dart';
+import 'package:athlio/core/utils/app_colors.dart';
 import 'package:athlio/features/home/data/models/workout_model.dart';
 import 'package:athlio/features/home/presentation/manager/add_workout/add_workout_cubit.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class CustomWorkoutCategoryItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.black,
+          backgroundColor: AppColors.kBlack87Color,
           minimumSize: const Size(double.infinity, 60),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
@@ -33,7 +34,7 @@ class CustomWorkoutCategoryItem extends StatelessWidget {
             Text(
               workoutModel.date,
               style: const TextStyle(
-                color: Colors.white,
+                color: AppColors.kWhiteColor,
                 fontSize: 18,
               ),
             ),
@@ -46,7 +47,7 @@ class CustomWorkoutCategoryItem extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                     fontSize: 20,
-                    color: Colors.white,
+                    color: AppColors.kWhiteColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -67,12 +68,12 @@ class CustomWorkoutCategoryItem extends StatelessWidget {
                   },
                   icon: const Icon(
                     Icons.delete,
-                    color: Colors.red,
+                    color: AppColors.kRedColor,
                   ),
                 ),
                 const Icon(
                   Icons.arrow_forward_ios,
-                  color: Colors.white,
+                  color: AppColors.kWhiteColor,
                 ),
               ],
             ),

@@ -1,4 +1,5 @@
 import 'package:athlio/core/di/service_locator.dart';
+import 'package:athlio/core/utils/app_colors.dart';
 import 'package:athlio/core/utils/constants.dart';
 import 'package:athlio/core/routing/app_router.dart';
 import 'package:athlio/core/utils/shared_pref_helper.dart';
@@ -15,7 +16,8 @@ class Athlio extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       theme: ThemeData(
-        fontFamily: 'Playfair Display',
+        scaffoldBackgroundColor: AppColors.kWhiteColor,
+        fontFamily: 'Roboto',
       ),
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
@@ -28,6 +30,7 @@ Future<void> checkIfUserIsLoggedIn() async {
   final userToken =
       await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
   // Check if the userToken is not null and not empty
+
   if (userToken != null && userToken.isNotEmpty) {
     isLoggedInUser = true;
   } else {

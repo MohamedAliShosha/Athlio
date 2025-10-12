@@ -8,12 +8,18 @@ class WorkoutSplitsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       appBar: buildAppBar(
+        leadingWidget: IconButton(
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.black87),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
         context,
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         foregroundColor: Colors.white, // used to change the color of the text
         title: "Workout Programs",
+
         centerTitle: true,
       ),
       body: const WorkoutSplitsViewBody(),

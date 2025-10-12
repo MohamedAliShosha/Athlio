@@ -1,3 +1,4 @@
+import 'package:athlio/core/utils/app_colors.dart';
 import 'package:athlio/features/login/presentation/widgets/login_form.dart';
 import 'package:flutter/material.dart';
 
@@ -15,11 +16,14 @@ class LoginViewBody extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.lock, size: 80, color: Colors.black),
+              Icon(Icons.lock, size: 80, color: AppColors.kBlackColor),
               SizedBox(height: 20),
               Text(
                 "Welcome back you've been missed!",
-                style: TextStyle(fontSize: 18, color: Colors.black87),
+                style: TextStyle(
+                    fontSize: 18,
+                    color: AppColors.kBlack87Color,
+                    fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 25),
               // Email Field

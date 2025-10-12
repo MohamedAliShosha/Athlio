@@ -1,3 +1,4 @@
+import 'package:athlio/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ExerciseDetailsDialogTextField extends StatelessWidget {
@@ -19,18 +20,18 @@ class ExerciseDetailsDialogTextField extends StatelessWidget {
     return TextFormField(
       validator: validator,
       autovalidateMode: autovalidateMode,
-      cursorColor: Colors.white,
+      cursorColor: AppColors.kWhiteColor,
       controller: controller,
-      style: const TextStyle(color: Colors.white),
+      style: const TextStyle(color: AppColors.kWhiteColor),
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: const TextStyle(color: Colors.white54),
+        hintStyle: const TextStyle(color: AppColors.kWhite54Color),
         enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.white54),
+          borderSide: BorderSide(color: AppColors.kWhite54Color),
         ),
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: Colors.white,
+            color: AppColors.kWhiteColor,
           ),
         ),
       ),

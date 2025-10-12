@@ -1,3 +1,4 @@
+import 'package:athlio/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 /// Reusable Button
@@ -5,10 +6,12 @@ class AppButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final bool isLoading;
+  final FontWeight? fontWeight;
 
   const AppButton(
       {super.key,
       required this.text,
+      this.fontWeight,
       required this.onPressed,
       this.isLoading = false});
 
@@ -21,7 +24,7 @@ class AppButton extends StatelessWidget {
         width: double.infinity,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.black,
+            backgroundColor: AppColors.kBlackColor,
             padding: const EdgeInsets.symmetric(vertical: 15),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -29,11 +32,14 @@ class AppButton extends StatelessWidget {
           onPressed: onPressed,
           child: isLoading == true
               ? const CircularProgressIndicator(
-                  color: Colors.white,
+                  color: AppColors.kWhiteColor,
                 )
               : Text(
                   text,
-                  style: const TextStyle(color: Colors.white, fontSize: 18),
+                  style: TextStyle(
+                      color: AppColors.kWhiteColor,
+                      fontSize: 18,
+                      fontWeight: fontWeight),
                 ),
         ),
       ),

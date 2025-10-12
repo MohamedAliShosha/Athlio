@@ -132,7 +132,6 @@ class _ProfileViewState extends State<ProfileView> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: Colors.black,
         appBar: buildAppBar(
           context,
           leadingWidget: IconButton(
@@ -141,7 +140,7 @@ class _ProfileViewState extends State<ProfileView> {
             },
             icon: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
+              color: Colors.black87,
             ),
           ),
         ),

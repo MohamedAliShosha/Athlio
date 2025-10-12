@@ -17,7 +17,7 @@ class WorkoutSplitsViewBody extends StatelessWidget {
           const Text(
             "Pro Split Workout",
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 22,
               fontWeight: FontWeight.bold,
             ),
@@ -26,7 +26,7 @@ class WorkoutSplitsViewBody extends StatelessWidget {
           const Text(
             "Train each muscle group separately for maximum focus",
             style:
-                TextStyle(color: Colors.white70, fontWeight: FontWeight.bold),
+                TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 16),
           SizedBox(
@@ -53,7 +53,7 @@ class WorkoutSplitsViewBody extends StatelessWidget {
           const Text(
             "Push Pull Legs Workout",
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 22,
               fontWeight: FontWeight.bold,
             ),
@@ -62,7 +62,7 @@ class WorkoutSplitsViewBody extends StatelessWidget {
           const Text(
             "Efficient compound-focused training split",
             style:
-                TextStyle(color: Colors.white70, fontWeight: FontWeight.bold),
+                TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 16),
           const WorkoutCard(

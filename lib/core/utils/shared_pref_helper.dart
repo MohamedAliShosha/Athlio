@@ -14,10 +14,13 @@ class SharedPrefHelper {
   }
 
   /// Removes all keys and values in theSharedPreferences => The sign /// means that this comment is a code comment that will be appeared when I hover on the clearAllData method
-  static clearAllData() async {
+  // ✅ Fix: clear both shared and secure storage
+  static Future<void> clearAllData() async {
     debugPrint('SharedPrefHelper : all data has been cleared');
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    await sharedPreferences.clear();
+    const secureStorage = FlutterSecureStorage();
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
+    await secureStorage.deleteAll(); // <-- THIS IS THE FIX
   }
 
   /// Saves a [value] with a [key] in the SharedPreferences.

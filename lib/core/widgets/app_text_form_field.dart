@@ -1,3 +1,4 @@
+import 'package:athlio/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 /// Reusable TextField
@@ -30,7 +31,7 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: widget.validator,
       controller: widget.controller,
-      cursorColor: Colors.black,
+      cursorColor: AppColors.kBlackColor,
       keyboardType: widget.keyboardType,
       onTapOutside: (event) {
         FocusScope.of(context).unfocus();
@@ -47,11 +48,16 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
                   });
                 },
                 icon: Icon(
-                    _obscureText ? Icons.visibility_off : Icons.visibility),
+                  _obscureText ? Icons.visibility_off : Icons.visibility,
+                  color: AppColors.kBlackColor,
+                ),
               )
             : null,
         hintText: widget.hintText,
-        hintStyle: const TextStyle(fontSize: 16),
+        hintStyle: const TextStyle(
+          fontSize: 16,
+          color: AppColors.kBlackColor,
+        ),
         filled: true,
         fillColor: Colors.grey[200],
         border: OutlineInputBorder(

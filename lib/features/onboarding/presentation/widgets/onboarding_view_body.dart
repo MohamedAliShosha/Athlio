@@ -1,4 +1,5 @@
 import 'package:athlio/core/routing/app_router.dart';
+import 'package:athlio/core/utils/app_colors.dart';
 import 'package:athlio/core/utils/shared_pref_keys.dart';
 import 'package:athlio/core/widgets/app_button.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class OnboardingViewBody extends StatelessWidget {
             children: [
               // Replace with your image asset
               Image.asset(
-                "assets/images/vector-black-and-white-illustration-of-a-hand-with-dumbbell.jpg", // put your image in assets
+                "assets/images/Generated_Image_October_09__2025_-_11_31AM__1_-removebg-preview.png", // put your image in assets
                 height: 150,
               ),
               const SizedBox(height: 40),
@@ -30,7 +31,7 @@ class OnboardingViewBody extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: AppColors.kBlackColor,
                 ),
               ),
               const SizedBox(height: 15),
@@ -39,12 +40,13 @@ class OnboardingViewBody extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.black54,
+                  color: AppColors.kBlack54Color,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 40),
               AppButton(
+                fontWeight: FontWeight.bold,
                 text: "Get Started",
                 onPressed: () {
                   // Navigate to homeView if the user is already loggedIn, If not navigate to loginView

@@ -10,7 +10,8 @@ AppBar buildAppBar(BuildContext context,
   return AppBar(
     title: Text(
       title ?? '',
-      style: TextStyle(fontWeight: fontWeight ?? FontWeight.bold),
+      style: TextStyle(
+          fontWeight: fontWeight ?? FontWeight.bold, color: Colors.black),
     ),
     elevation: 0,
     centerTitle: centerTitle ?? false,

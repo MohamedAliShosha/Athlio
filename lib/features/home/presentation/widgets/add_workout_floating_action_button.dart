@@ -1,3 +1,4 @@
+import 'package:athlio/core/utils/app_colors.dart';
 import 'package:athlio/features/home/presentation/manager/add_workout/add_workout_cubit.dart';
 import 'package:athlio/features/home/presentation/widgets/new_workout_dialog.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class AddWorkoutFloatingActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       shape: const CircleBorder(),
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.black87,
       onPressed: () {
         showDialog(
           context: context,
@@ -31,7 +32,7 @@ class AddWorkoutFloatingActionButton extends StatelessWidget {
       },
       child: const Icon(
         Icons.add,
-        color: Colors.white,
+        color: AppColors.kWhiteColor,
       ),
     );
   }

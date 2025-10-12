@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:athlio/core/utils/app_colors.dart';
 
 class WorkoutCard extends StatelessWidget {
   final String title;
@@ -19,12 +20,13 @@ class WorkoutCard extends StatelessWidget {
       margin: EdgeInsets.only(right: isWide ? 0 : 12, bottom: isWide ? 16 : 0),
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: Colors.grey[900],
+        color: AppColors.kBlack87Color,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.green.withOpacity(0.5), width: 1),
+        border:
+            Border.all(color: AppColors.kGreenColor.withOpacity(0.5), width: 1),
         boxShadow: [
           BoxShadow(
-            color: Colors.green.withOpacity(0.1),
+            color: AppColors.kGreenColor.withOpacity(0.1),
             blurRadius: 6,
             offset: const Offset(0, 4),
           ),
@@ -38,7 +40,7 @@ class WorkoutCard extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              color: Colors.white,
+              color: AppColors.kWhiteColor,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
@@ -53,8 +55,8 @@ class WorkoutCard extends StatelessWidget {
             alignment: Alignment.bottomRight,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                foregroundColor: Colors.white,
+                backgroundColor: AppColors.kGreenColor,
+                foregroundColor: AppColors.kWhiteColor,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 shape: RoundedRectangleBorder(
@@ -65,7 +67,7 @@ class WorkoutCard extends StatelessWidget {
                 // Navigate to workout details here
               },
               child: const Text(
-                "Start",
+                "Show",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),

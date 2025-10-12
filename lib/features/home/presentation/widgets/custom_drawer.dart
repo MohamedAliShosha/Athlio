@@ -1,4 +1,5 @@
 import 'package:athlio/core/routing/app_router.dart';
+import 'package:athlio/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -11,7 +12,7 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.black87,
+        color: AppColors.kBlack87Color,
         child: Padding(
           padding: const EdgeInsets.only(top: 50),
           child: Column(
@@ -25,10 +26,12 @@ class CustomDrawer extends StatelessWidget {
                         context.pop();
                         context.push(AppRouter.kProfileView);
                       },
-                      leading: const Icon(Icons.person, color: Colors.white),
+                      leading: const Icon(Icons.person,
+                          color: AppColors.kWhiteColor),
                       title: const Text(
                         "Profile",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
+                        style: TextStyle(
+                            color: AppColors.kWhiteColor, fontSize: 20),
                       ),
                     ),
                     ListTile(
@@ -36,11 +39,12 @@ class CustomDrawer extends StatelessWidget {
                         context.pop();
                         context.push(AppRouter.kWorkoutSplitsView);
                       },
-                      leading:
-                          const Icon(Icons.fitness_center, color: Colors.white),
+                      leading: const Icon(Icons.fitness_center,
+                          color: AppColors.kWhiteColor),
                       title: const Text(
                         "Workout splits",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
+                        style: TextStyle(
+                            color: AppColors.kWhiteColor, fontSize: 20),
                       ),
                     ),
                   ],
