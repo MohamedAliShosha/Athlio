@@ -1,6 +1,6 @@
-import 'package:athlio/core/utils/app_colors.dart';
-import 'package:athlio/features/home_details/presentation/manager/exercise_cubit/exercise_cubit.dart';
-import 'package:athlio/features/home_details/presentation/widgets/exercise_details_dialog.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../manager/exercise_cubit/exercise_cubit.dart';
+import 'exercise_details_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

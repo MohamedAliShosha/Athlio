@@ -1,4 +1,4 @@
-import 'package:athlio/features/login/presentation/widgets/login_view_body.dart';
+import '../widgets/login_view_body.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {

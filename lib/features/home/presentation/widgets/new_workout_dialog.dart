@@ -1,7 +1,7 @@
-import 'package:athlio/core/utils/app_colors.dart';
-import 'package:athlio/features/home/data/models/workout_model.dart';
-import 'package:athlio/features/home/presentation/manager/add_workout/add_workout_cubit.dart';
-import 'package:athlio/features/home_details/presentation/widgets/exercise_details_dialog_text_field.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../data/models/workout_model.dart';
+import '../manager/add_workout/add_workout_cubit.dart';
+import '../../../exercises/presentation/widgets/exercise_details_dialog_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';

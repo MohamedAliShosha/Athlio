@@ -1,10 +1,10 @@
-import 'package:athlio/core/routing/app_router.dart';
-import 'package:athlio/core/utils/app_colors.dart';
-import 'package:athlio/core/widgets/app_button.dart';
-import 'package:athlio/core/widgets/app_text_form_field.dart';
-import 'package:athlio/features/login/data/models/login_request_body.dart';
-import 'package:athlio/features/login/presentation/manager/login/login_cubit.dart';
-import 'package:athlio/features/login/presentation/widgets/login_bloc_listener.dart';
+import '../../../../core/routing/app_router.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/widgets/app_button.dart';
+import '../../../../core/widgets/app_text_form_field.dart';
+import '../../data/models/login_request_body.dart';
+import '../manager/login/login_cubit.dart';
+import 'login_bloc_listener.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

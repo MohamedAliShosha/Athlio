@@ -1,10 +1,10 @@
-import 'package:athlio/core/functions/build_app_bar.dart';
-import 'package:athlio/core/routing/app_router.dart';
-import 'package:athlio/core/utils/app_colors.dart';
-import 'package:athlio/core/utils/shared_pref_helper.dart';
-import 'package:athlio/core/utils/shared_pref_keys.dart';
-import 'package:athlio/features/profile/presentation/widgets/custom_log_out_alert_dialog.dart';
-import 'package:athlio/features/profile/presentation/widgets/custom_profile_circle_avatar.dart';
+import '../../../../core/functions/build_app_bar.dart';
+import '../../../../core/routing/app_router.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/shared_pref_helper.dart';
+import '../../../../core/utils/shared_pref_keys.dart';
+import '../widgets/custom_log_out_alert_dialog.dart';
+import '../widgets/custom_profile_circle_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -32,8 +32,10 @@ class _ProfileViewState extends State<ProfileView> {
 
   /// Loads user name and email asynchronously from SharedPreferences
   Future<void> _loadUserData() async {
-    final name = await SharedPrefHelper.getString(SharedPrefKeys.userName);
-    final email = await SharedPrefHelper.getString(SharedPrefKeys.userEmail);
+    final name =
+        await SharedPrefHelper.getSecuredString(SharedPrefKeys.userName);
+    final email =
+        await SharedPrefHelper.getSecuredString(SharedPrefKeys.userEmail);
     setState(() {
       userName = name;
       userEmail = email;

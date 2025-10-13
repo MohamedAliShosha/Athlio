@@ -1,7 +1,7 @@
-import 'package:athlio/core/functions/build_snack_bar.dart';
-import 'package:athlio/features/home_details/data/models/exercise_details_model.dart';
-import 'package:athlio/features/home_details/presentation/manager/exercise_cubit/exercise_cubit.dart';
-import 'package:athlio/features/home_details/presentation/widgets/tag_widget.dart';
+import '../../../../core/functions/build_snack_bar.dart';
+import '../../data/models/exercise_details_model.dart';
+import '../manager/exercise_cubit/exercise_cubit.dart';
+import 'tag_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

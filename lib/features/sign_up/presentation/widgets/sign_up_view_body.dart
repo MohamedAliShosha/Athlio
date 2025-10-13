@@ -1,5 +1,5 @@
-import 'package:athlio/core/utils/app_colors.dart';
-import 'package:athlio/features/sign_up/presentation/widgets/sign_up_form.dart';
+import '../../../../core/utils/app_colors.dart';
+import 'sign_up_form.dart';
 import 'package:flutter/material.dart';
 
 class SignUpViewBody extends StatelessWidget {

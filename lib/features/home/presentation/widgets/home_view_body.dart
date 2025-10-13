@@ -1,4 +1,4 @@
-import 'package:athlio/features/home/presentation/widgets/workout_category_list_view.dart';
+import 'workout_category_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {

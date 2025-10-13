@@ -1,7 +1,7 @@
-import 'package:athlio/core/utils/app_colors.dart';
-import 'package:athlio/features/home/presentation/widgets/custom_drawer.dart';
-import 'package:athlio/features/home/presentation/widgets/home_view_body.dart';
-import 'package:athlio/features/home/presentation/widgets/add_workout_floating_action_button.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../widgets/custom_drawer.dart';
+import '../widgets/home_view_body.dart';
+import '../widgets/add_workout_floating_action_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {

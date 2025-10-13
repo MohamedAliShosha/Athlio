@@ -1,8 +1,8 @@
-import 'package:athlio/core/networking/sign_up_api_error_model.dart';
-import 'package:athlio/features/sign_up/data/models/sign_up_request_body.dart';
-import 'package:athlio/features/sign_up/data/models/sign_up_response_model.dart';
-import 'package:athlio/features/sign_up/data/repos/sign_up_repo.dart';
-import 'package:athlio/features/sign_up/service/sign_up_service.dart';
+import '../models/sign_up_api_error_model.dart';
+import '../models/sign_up_request_body.dart';
+import '../models/sign_up_response_model.dart';
+import 'sign_up_repo.dart';
+import '../../service/sign_up_service.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 

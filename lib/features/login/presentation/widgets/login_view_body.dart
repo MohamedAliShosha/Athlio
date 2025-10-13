@@ -1,5 +1,5 @@
-import 'package:athlio/core/utils/app_colors.dart';
-import 'package:athlio/features/login/presentation/widgets/login_form.dart';
+import '../../../../core/utils/app_colors.dart';
+import 'login_form.dart';
 import 'package:flutter/material.dart';
 
 class LoginViewBody extends StatelessWidget {

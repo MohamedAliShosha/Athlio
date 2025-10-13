@@ -1,5 +1,5 @@
-import 'package:athlio/core/routing/app_router.dart';
-import 'package:athlio/core/utils/app_colors.dart';
+import '../../../../core/routing/app_router.dart';
+import '../../../../core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

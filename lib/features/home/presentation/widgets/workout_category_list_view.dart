@@ -1,6 +1,6 @@
-import 'package:athlio/core/routing/app_router.dart';
-import 'package:athlio/features/home/presentation/manager/add_workout/add_workout_cubit.dart';
-import 'package:athlio/features/home/presentation/widgets/custom_workout_category_item.dart';
+import '../../../../core/routing/app_router.dart';
+import '../manager/add_workout/add_workout_cubit.dart';
+import 'custom_workout_category_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

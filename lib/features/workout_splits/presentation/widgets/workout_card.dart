@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:athlio/core/utils/app_colors.dart';
+import '../../../../core/utils/app_colors.dart';
 
 class WorkoutCard extends StatelessWidget {
   final String title;
@@ -51,29 +51,29 @@ class WorkoutCard extends StatelessWidget {
             style: const TextStyle(color: Colors.white70, fontSize: 14),
           ),
           const SizedBox(height: 12),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.kGreenColor,
-                foregroundColor: AppColors.kWhiteColor,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-              onPressed: () {
-                // Navigate to workout details here
-              },
-              child: const Text(
-                "Show",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          )
+          // Align(
+          //   alignment: Alignment.bottomRight,
+          //   child: ElevatedButton(
+          //     style: ElevatedButton.styleFrom(
+          //       backgroundColor: AppColors.kGreenColor,
+          //       foregroundColor: AppColors.kWhiteColor,
+          //       padding:
+          //           const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          //       shape: RoundedRectangleBorder(
+          //         borderRadius: BorderRadius.circular(10),
+          //       ),
+          //     ),
+          //     onPressed: () {
+          //       // Navigate to workout details here
+          //     },
+          //     child: const Text(
+          //       "Show",
+          //       style: TextStyle(
+          //         fontWeight: FontWeight.bold,
+          //       ),
+          //     ),
+          //   ),
+          // )
         ],
       ),
     );

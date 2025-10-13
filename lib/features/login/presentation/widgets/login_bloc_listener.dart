@@ -1,6 +1,6 @@
-import 'package:athlio/core/functions/build_snack_bar.dart';
-import 'package:athlio/core/routing/app_router.dart';
-import 'package:athlio/features/login/presentation/manager/login/login_cubit.dart';
+import '../../../../core/functions/build_snack_bar.dart';
+import '../../../../core/routing/app_router.dart';
+import '../manager/login/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

@@ -1,8 +1,8 @@
-import 'package:athlio/features/login/data/models/login_api_error_model.dart';
-import 'package:athlio/features/login/data/models/login_request_body.dart';
-import 'package:athlio/features/login/data/models/login_response.dart';
-import 'package:athlio/features/login/data/repos/login_repo.dart';
-import 'package:athlio/features/login/service/login_service.dart';
+import '../models/login_api_error_model.dart';
+import '../models/login_request_body.dart';
+import '../models/login_response.dart';
+import 'login_repo.dart';
+import '../../service/login_service.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
