@@ -1,5 +1,5 @@
-import 'package:athlio/features/home_details/presentation/manager/exercise_cubit/exercise_cubit.dart';
-import 'package:athlio/features/home_details/presentation/widgets/exercise_item.dart';
+import '../manager/exercise_cubit/exercise_cubit.dart';
+import 'exercise_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

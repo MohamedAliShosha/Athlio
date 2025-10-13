@@ -1,10 +1,10 @@
-import 'package:athlio/core/networking/dio_factory.dart';
-import 'package:athlio/features/login/data/repos/login_repo_implement.dart';
-import 'package:athlio/features/login/presentation/manager/login/login_cubit.dart';
-import 'package:athlio/features/login/service/login_service.dart';
-import 'package:athlio/features/sign_up/data/repos/sign_up_repo_implement.dart';
-import 'package:athlio/features/sign_up/presentation/manager/sign_up/sign_up_cubit.dart';
-import 'package:athlio/features/sign_up/service/sign_up_service.dart';
+import '../networking/dio_factory.dart';
+import '../../features/login/data/repos/login_repo_implement.dart';
+import '../../features/login/presentation/manager/login/login_cubit.dart';
+import '../../features/login/service/login_service.dart';
+import '../../features/sign_up/data/repos/sign_up_repo_implement.dart';
+import '../../features/sign_up/presentation/manager/sign_up/sign_up_cubit.dart';
+import '../../features/sign_up/service/sign_up_service.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 

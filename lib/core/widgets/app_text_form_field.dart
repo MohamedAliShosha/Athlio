@@ -1,4 +1,4 @@
-import 'package:athlio/core/utils/app_colors.dart';
+import '../utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 /// Reusable TextField

@@ -1,12 +1,13 @@
-import 'package:athlio/core/di/service_locator.dart';
-import 'package:athlio/core/utils/app_colors.dart';
-import 'package:athlio/core/utils/constants.dart';
-import 'package:athlio/core/routing/app_router.dart';
-import 'package:athlio/core/utils/shared_pref_helper.dart';
-import 'package:athlio/core/utils/shared_pref_keys.dart';
-import 'package:athlio/features/home/data/models/workout_model.dart';
-import 'package:athlio/features/home_details/data/models/exercise_details_model.dart';
+import 'core/di/service_locator.dart';
+import 'core/utils/app_colors.dart';
+import 'core/utils/constants.dart';
+import 'core/routing/app_router.dart';
+import 'core/utils/shared_pref_helper.dart';
+import 'core/utils/shared_pref_keys.dart';
+import 'features/home/data/models/workout_model.dart';
+import 'features/exercises/data/models/exercise_details_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hive_flutter/adapters.dart';
 
 class Athlio extends StatelessWidget {
@@ -40,6 +41,8 @@ Future<void> checkIfUserIsLoggedIn() async {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+
   setupServiceLocator();
   await Hive.initFlutter(); // Initializing Hive
   // Registering Hive adapter of the first model

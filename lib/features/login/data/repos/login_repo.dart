@@ -1,6 +1,6 @@
-import 'package:athlio/features/login/data/models/login_api_error_model.dart';
-import 'package:athlio/features/login/data/models/login_request_body.dart';
-import 'package:athlio/features/login/data/models/login_response.dart';
+import '../models/login_api_error_model.dart';
+import '../models/login_request_body.dart';
+import '../models/login_response.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class LoginRepo {

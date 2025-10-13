@@ -1,5 +1,5 @@
-import 'package:athlio/core/utils/constants.dart';
-import 'package:athlio/features/home_details/data/models/exercise_details_model.dart';
+import '../../../../../core/utils/constants.dart';
+import '../../../data/models/exercise_details_model.dart';
 import 'package:bloc/bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:meta/meta.dart';

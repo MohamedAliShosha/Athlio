@@ -1,5 +1,5 @@
-import 'package:athlio/features/home/data/models/workout_model.dart';
-import 'package:athlio/features/home_details/presentation/widgets/exercises_list_view.dart';
+import '../../../home/data/models/workout_model.dart';
+import 'exercises_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeDetailsViewBody extends StatelessWidget {

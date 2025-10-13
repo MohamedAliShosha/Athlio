@@ -1,7 +1,7 @@
-import 'package:athlio/core/routing/app_router.dart';
-import 'package:athlio/core/utils/app_colors.dart';
-import 'package:athlio/core/utils/shared_pref_keys.dart';
-import 'package:athlio/core/widgets/app_button.dart';
+import '../../../../core/routing/app_router.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/shared_pref_keys.dart';
+import '../../../../core/widgets/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

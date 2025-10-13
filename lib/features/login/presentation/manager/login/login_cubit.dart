@@ -1,9 +1,9 @@
-import 'package:athlio/core/utils/shared_pref_helper.dart';
-import 'package:athlio/core/utils/shared_pref_keys.dart';
-import 'package:athlio/features/login/data/models/login_api_error_model.dart';
-import 'package:athlio/features/login/data/models/login_request_body.dart';
-import 'package:athlio/features/login/data/models/login_response.dart';
-import 'package:athlio/features/login/data/repos/login_repo.dart';
+import '../../../../../core/utils/shared_pref_helper.dart';
+import '../../../../../core/utils/shared_pref_keys.dart';
+import '../../../data/models/login_api_error_model.dart';
+import '../../../data/models/login_request_body.dart';
+import '../../../data/models/login_response.dart';
+import '../../../data/repos/login_repo.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 
@@ -49,7 +49,7 @@ Future<void> saveUserAccessToken(String? accessToken) async {
 /// Method that saves user refresh token
 Future<void> saveUserName(String? userName) async {
   // Assuming you have a method to save the token in shared preferences
-  await SharedPrefHelper.setData(
+  await SharedPrefHelper.setSecuredString(
       SharedPrefKeys.userName, userName!); // save userName
 
   debugPrint('User name saved: $userName');
@@ -58,7 +58,7 @@ Future<void> saveUserName(String? userName) async {
 /// Method that saves user email
 Future<void> saveUserEmail(String? userEmail) async {
   // Assuming you have a method to save the token in shared preferences
-  await SharedPrefHelper.setData(
+  await SharedPrefHelper.setSecuredString(
       SharedPrefKeys.userEmail, userEmail!); // save userEmail
 
   debugPrint('User email saved: $userEmail');

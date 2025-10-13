@@ -1,5 +1,5 @@
-import 'package:athlio/core/functions/build_app_bar.dart';
-import 'package:athlio/features/workout_splits/presentation/widgets/workout_splits_view_body.dart';
+import '../../../../core/functions/build_app_bar.dart';
+import '../widgets/workout_splits_view_body.dart';
 import 'package:flutter/material.dart';
 
 class WorkoutSplitsView extends StatelessWidget {

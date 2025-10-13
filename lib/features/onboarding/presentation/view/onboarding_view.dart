@@ -1,4 +1,4 @@
-import 'package:athlio/features/onboarding/presentation/widgets/onboarding_view_body.dart';
+import '../widgets/onboarding_view_body.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingView extends StatelessWidget {
