@@ -16,7 +16,7 @@
   - “Get Started” button navigates to the Login screen
 
   <p align="left">
-  <img src="assets/screen_shots/Onboarding.png" alt="App Overview" hieght="1000"/>
+  <img src="assets/screen_shots/Onboarding.png" alt="App Overview" height="1000"/>
 </p>
 
 ##
@@ -48,7 +48,7 @@
   - ➕ Users can add a new workout via the Floating Action Button (FAB)
 
   <p align="left">
-  <img src="assets/screen_shots/home1.png" alt="App Overview" height="800"/>
+  <img src="assets/screen_shots/home.png" alt="App Overview" height="800"/>
 </p>
 
 ##
