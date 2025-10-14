@@ -13,7 +13,7 @@
   - Welcomes users to Athlio, the ultimate workout companion app
   - Includes the app logo
   - Motivational tagline — “Track your daily exercise & watch your progress!”
-  - “Get Started” button navigates to the Login screen
+  - “Get Started” button navigates to the Login view
 
   <p align="left">
   <img src="assets/screen_shots/Onboarding.png" alt="App Overview" height="1000"/>
