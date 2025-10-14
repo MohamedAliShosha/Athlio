@@ -9,33 +9,31 @@ class SignUpViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 100),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Icon(Icons.person, size: 80, color: AppColors.kBlackColor),
-            SizedBox(height: 20),
-            Text(
-              "Create Account",
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.kBlackColor),
-            ),
-            SizedBox(height: 10),
-            Text(
-              "Sign up to get started",
-              style: TextStyle(
-                  fontSize: 16,
-                  color: AppColors.kBlack54Color,
-                  fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 30),
-            SignUpForm(),
-          ],
-        ),
+    return const SingleChildScrollView(
+      padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 50),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Icon(Icons.person, size: 80, color: AppColors.kBlackColor),
+          SizedBox(height: 20),
+          Text(
+            "Create Account",
+            style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: AppColors.kBlackColor),
+          ),
+          SizedBox(height: 10),
+          Text(
+            "Sign up to get started",
+            style: TextStyle(
+                fontSize: 16,
+                color: AppColors.kBlack54Color,
+                fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 30),
+          SignUpForm(),
+        ],
       ),
     );
   }

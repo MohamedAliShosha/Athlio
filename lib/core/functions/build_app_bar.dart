@@ -5,6 +5,7 @@ AppBar buildAppBar(BuildContext context,
     Color? backgroundColor,
     Color? foregroundColor,
     String? title,
+    double? elevation,
     FontWeight? fontWeight,
     bool? centerTitle}) {
   return AppBar(
@@ -13,10 +14,11 @@ AppBar buildAppBar(BuildContext context,
       style: TextStyle(
           fontWeight: fontWeight ?? FontWeight.bold, color: Colors.black),
     ),
-    elevation: 0,
+    elevation: elevation ?? 0,
     centerTitle: centerTitle ?? false,
     leading: leadingWidget,
     backgroundColor: backgroundColor ?? Colors.white,
     foregroundColor: foregroundColor ?? Colors.black,
+    surfaceTintColor: Colors.transparent, // ✅ disable Material 3 tinting
   );
 }

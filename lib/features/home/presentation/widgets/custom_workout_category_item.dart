@@ -31,28 +31,30 @@ class CustomWorkoutCategoryItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // Left side → Date
-            Text(
-              workoutModel.date,
-              style: const TextStyle(
-                color: AppColors.kWhiteColor,
-                fontSize: 18,
-              ),
+            Column(
+              children: [
+                Text(
+                  workoutModel.date,
+                  style: const TextStyle(
+                    color: AppColors.kWhiteColor,
+                    fontSize: 16,
+                  ),
+                ),
+                Center(
+                  child: Text(
+                    workoutModel.workoutName,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      color: AppColors.kWhiteColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
             ),
 
             // Center → Title
-            Expanded(
-              child: Center(
-                child: Text(
-                  workoutModel.workoutName,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    color: AppColors.kWhiteColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
 
             // Right side → Icons (delete + arrow)
             Row(

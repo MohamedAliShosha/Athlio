@@ -7,7 +7,7 @@ import '../../features/login/presentation/views/login_view.dart';
 import '../../features/onboarding/presentation/view/onboarding_view.dart';
 import '../../features/profile/presentation/views/profile_view.dart';
 import '../../features/home/presentation/views/home_view.dart';
-import '../../features/exercises/presentation/views/home_details_view.dart';
+import '../../features/exercises/presentation/views/exercises_view.dart';
 import '../../features/sign_up/presentation/manager/sign_up/sign_up_cubit.dart';
 import '../../features/sign_up/presentation/views/sign_up_view.dart';
 import '../../features/workout_splits/presentation/views/workout_splits_view.dart';

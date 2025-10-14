@@ -29,6 +29,8 @@ class _HomeViewState extends State<HomeView> {
 
   AppBar buildAppBar() {
     return AppBar(
+      surfaceTintColor: Colors.transparent, // ✅ disable Material 3 tinting
+
       backgroundColor: AppColors.kWhiteColor,
       elevation: 0,
       leading: IconButton(

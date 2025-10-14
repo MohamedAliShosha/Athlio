@@ -103,7 +103,6 @@ class _ProfileViewState extends State<ProfileView> {
     final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: Colors.grey.shade50,
       appBar: buildAppBar(
         context,
         leadingWidget: IconButton(

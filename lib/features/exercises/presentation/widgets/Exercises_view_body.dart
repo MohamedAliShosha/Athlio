@@ -2,8 +2,8 @@ import '../../../home/data/models/workout_model.dart';
 import 'exercises_list_view.dart';
 import 'package:flutter/material.dart';
 
-class HomeDetailsViewBody extends StatelessWidget {
-  const HomeDetailsViewBody({
+class ExercisesViewBody extends StatelessWidget {
+  const ExercisesViewBody({
     super.key,
     required this.workoutId,
     required this.workoutModel,

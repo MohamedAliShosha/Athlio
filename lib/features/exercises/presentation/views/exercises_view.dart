@@ -1,7 +1,7 @@
 import '../../../../core/utils/app_colors.dart';
 import '../../../home/data/models/workout_model.dart';
 import '../widgets/exercise_floating_action_button.dart';
-import '../widgets/home_details_view_body.dart';
+import '../widgets/Exercises_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -18,6 +18,10 @@ class ExercisesView extends StatelessWidget {
     return Scaffold(
       floatingActionButton: ExerciseFloatingActionButton(workoutId: workoutId),
       appBar: AppBar(
+        backgroundColor: AppColors.kWhiteColor,
+        surfaceTintColor: Colors.transparent, // ✅ disable Material 3 tinting
+
+        elevation: 0,
         centerTitle: true,
         leading: IconButton(
           onPressed: () {
@@ -37,7 +41,7 @@ class ExercisesView extends StatelessWidget {
           ),
         ),
       ),
-      body: HomeDetailsViewBody(
+      body: ExercisesViewBody(
         workoutModel: workoutModel,
         workoutId: workoutId,
       ),

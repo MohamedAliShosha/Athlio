@@ -15,7 +15,7 @@ class NewWorkoutDialog extends StatefulWidget {
 
 class _NewWorkoutDialogState extends State<NewWorkoutDialog> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final TextEditingController controller = TextEditingController();
+  final TextEditingController workoutController = TextEditingController();
   late WorkoutCubit addWorkoutCubit;
 
   @override
@@ -26,7 +26,7 @@ class _NewWorkoutDialogState extends State<NewWorkoutDialog> {
 
   @override
   void dispose() {
-    controller.dispose();
+    workoutController.dispose();
     super.dispose();
   }
 
@@ -48,7 +48,7 @@ class _NewWorkoutDialogState extends State<NewWorkoutDialog> {
             return null;
           },
           autovalidateMode: AutovalidateMode.onUserInteraction,
-          controller: controller,
+          controller: workoutController,
           hintText: 'workout name / اسم التمرين',
         ),
         actions: [
@@ -63,7 +63,7 @@ class _NewWorkoutDialogState extends State<NewWorkoutDialog> {
             onPressed: () async {
               if (formKey.currentState!.validate()) {
                 // Get the entered workout name
-                final workoutName = controller.text.trim();
+                final workoutName = workoutController.text.trim();
                 final now = DateTime.now();
                 final formattedDate =
                     DateFormat('EEEE, MMM d, yyyy').format(now);

@@ -9,6 +9,7 @@ class WorkoutSplitsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(
+        elevation: 0,
         leadingWidget: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black87),
           onPressed: () {
