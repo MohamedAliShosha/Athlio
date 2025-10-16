@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  auto_size_text: ^3.0.0
   cupertino_icons: ^1.0.8
   dartz: ^0.10.1
   dio: ^5.9.0
@@ -95,7 +96,8 @@ flutter:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/Generated_Image_October_09__2025_-_11_31AM__1_-removebg-preview.png"
+  image_path: "assets/images/Generated_Image_October_09__2025_-_11_31AM__1_-remov\
+    ebg-preview.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
 
 # flutter_assets:

@@ -33,7 +33,7 @@ class _ExerciseItemState extends State<ExerciseItem> {
               color: widget.exerciseModel.isDone
                   ? Colors.green
                   : Colors.grey.shade200,
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(8),
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -51,26 +51,23 @@ class _ExerciseItemState extends State<ExerciseItem> {
                           color: Colors.black,
                         ),
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 20),
                       // By default, the wrap layout is horizontal and both the children and the runs are aligned to the start.
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            TagWidget(
-                              tagTitle: widget.exerciseModel.weight,
-                            ),
-                            const SizedBox(width: 16),
-                            TagWidget(
-                              tagTitle: widget.exerciseModel.numberOfReps,
-                            ),
-                            const SizedBox(width: 16),
-                            TagWidget(
-                              tagTitle: widget.exerciseModel.numberOfSets,
-                            ),
-                          ],
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          TagWidget(
+                            tagTitle: widget.exerciseModel.weight,
+                          ),
+                          const SizedBox(width: 8),
+                          TagWidget(
+                            tagTitle: widget.exerciseModel.numberOfReps,
+                          ),
+                          const SizedBox(width: 8),
+                          TagWidget(
+                            tagTitle: widget.exerciseModel.numberOfSets,
+                          ),
+                        ],
                       )
                     ],
                   ),

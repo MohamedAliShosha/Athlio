@@ -17,7 +17,7 @@ class CustomWorkoutCategoryItem extends StatelessWidget {
     // Format the date to 'dd/MM/yyyy'
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.kBlack87Color,
