@@ -13,10 +13,10 @@
   - Welcomes users to Athlio, the ultimate workout companion app
   - Includes the app logo
   - Motivational tagline — “Track your daily exercise & watch your progress!”
-  - “Get Started” button navigates to the Login screen
+  - “Get Started” button navigates to the Login view
 
   <p align="left">
-  <img src="assets/screen_shots/Onboarding.png" alt="App Overview" hieght="1000"/>
+  <img src="assets/screen_shots/Onboarding.png" alt="App Overview" height="1000"/>
 </p>
 
 ##
@@ -48,7 +48,7 @@
   - ➕ Users can add a new workout via the Floating Action Button (FAB)
 
   <p align="left">
-  <img src="assets/screen_shots/home1.png" alt="App Overview" height="800"/>
+  <img src="assets/screen_shots/home.png" alt="App Overview" height="800"/>
 </p>
 
 ##
