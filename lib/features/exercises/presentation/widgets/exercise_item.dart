@@ -1,3 +1,5 @@
+import '../../../../core/utils/app_text_styles.dart';
+
 import '../../../../core/functions/build_snack_bar.dart';
 import '../../data/models/exercise_details_model.dart';
 import '../manager/exercise_cubit/exercise_cubit.dart';
@@ -45,9 +47,7 @@ class _ExerciseItemState extends State<ExerciseItem> {
                     children: [
                       Text(
                         widget.exerciseModel.exerciseName,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
+                        style: TextStyles.bold18.copyWith(
                           color: Colors.black,
                         ),
                       ),

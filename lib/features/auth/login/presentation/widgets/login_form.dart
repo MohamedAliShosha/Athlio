@@ -1,11 +1,11 @@
-import '../../../../core/widgets/app_button.dart';
-import '../../../../core/widgets/app_text_form_field.dart';
-import '../../../auth/login/data/models/login_request_body.dart';
-import '../../../auth/login/presentation/manager/login/login_cubit.dart';
-import '../../../auth/login/presentation/widgets/dont_have_account.dart';
-import '../../../auth/login/presentation/widgets/login_bloc_listener.dart';
+import '../../../../../core/widgets/app_button.dart';
+import '../../../../../core/widgets/app_text_form_field.dart';
+import 'dont_have_account.dart';
 import 'package:email_validator/email_validator.dart';
 
+import '../../data/models/login_request_body.dart';
+import '../manager/login/login_cubit.dart';
+import 'login_bloc_listener.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

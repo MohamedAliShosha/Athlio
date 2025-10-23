@@ -1,14 +1,15 @@
-import '../../../../core/routing/app_router.dart';
-import '../../../../core/utils/app_colors.dart';
-import '../../../../core/widgets/app_button.dart';
-import '../../../../core/widgets/app_text_form_field.dart';
+
+
+import '../../../../../core/widgets/app_button.dart';
+import '../../../../../core/widgets/app_text_form_field.dart';
+import 'already_have_account.dart';
+
 import '../../data/models/sign_up_request_body.dart';
 import '../manager/sign_up/sign_up_cubit.dart';
 import 'sign_up_bloc_listener.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key});
@@ -47,6 +48,7 @@ class _SignUpFormState extends State<SignUpForm> {
           children: [
             // Full Name
             AppTextFormField(
+              keyboardType: TextInputType.name,
               validator: (data) {
                 if (data == null || data.isEmpty) {
                   return 'This field is required';
@@ -76,6 +78,7 @@ class _SignUpFormState extends State<SignUpForm> {
             const SizedBox(height: 15),
             // Email
             AppTextFormField(
+              keyboardType: TextInputType.phone,
               validator: (data) {
                 if (data == null || data.isEmpty) {
                   return 'This field is required';
@@ -87,9 +90,9 @@ class _SignUpFormState extends State<SignUpForm> {
               isPassword: false,
             ),
             const SizedBox(height: 15),
-
             // Password
             AppTextFormField(
+              keyboardType: TextInputType.visiblePassword,
               validator: (data) {
                 if (data == null || data.isEmpty) {
                   return 'This field is required';
@@ -106,6 +109,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
             // Confirm Password
             AppTextFormField(
+              keyboardType: TextInputType.visiblePassword,
               validator: (data) {
                 if (data == null || data.isEmpty) {
                   return 'This field is required';
@@ -148,29 +152,7 @@ class _SignUpFormState extends State<SignUpForm> {
               },
             ),
             const SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  "Already have an account? ",
-                  style: TextStyle(fontSize: 18, color: AppColors.kBlackColor),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    // Navigate to Login Screen
-                    GoRouter.of(context).pushReplacement(AppRouter.kLoginView);
-                  },
-                  child: const Text(
-                    "Sign In",
-                    style: TextStyle(
-                      color: AppColors.kBlueColor,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            const AlreadyHaveAccount(),
             const SignUpBlocListener(),
             // Confirm Password
           ],

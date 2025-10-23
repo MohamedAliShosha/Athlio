@@ -1,4 +1,5 @@
-import '../../../../core/utils/app_colors.dart';
+import '../widgets/drawer_app_bar.dart';
+
 import '../widgets/custom_drawer.dart';
 import '../widgets/home_view_body.dart';
 import '../widgets/add_workout_floating_action_button.dart';
@@ -19,28 +20,16 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       drawer: const CustomDrawer(),
       key: scaffoldKey,
-      appBar: buildAppBar(),
-      body: const HomeViewBody(),
-
-      /// Floating Action Button -> opens New Workout Dialog
-      floatingActionButton: const AddWorkoutFloatingActionButton(),
-    );
-  }
-
-  AppBar buildAppBar() {
-    return AppBar(
-      surfaceTintColor: Colors.transparent, // ✅ disable Material 3 tinting
-
-      backgroundColor: AppColors.kWhiteColor,
-      elevation: 0,
-      leading: IconButton(
-        icon: const Icon(
-          Icons.menu,
-          color: AppColors.kBlack87Color,
-        ),
+      appBar: drawerAppBar(
         onPressed: () {
           scaffoldKey.currentState!.openDrawer();
         },
+      ),
+
+      /// Floating Action Button -> opens New Workout Dialog
+      floatingActionButton: const AddWorkoutFloatingActionButton(),
+      body: const SafeArea(
+        child: HomeViewBody(),
       ),
     );
   }

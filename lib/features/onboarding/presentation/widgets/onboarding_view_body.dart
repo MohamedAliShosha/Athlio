@@ -1,3 +1,5 @@
+import '../../../../core/utils/app_text_styles.dart';
+
 import '../../../../core/routing/app_router.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/shared_pref_keys.dart';
@@ -24,23 +26,19 @@ class OnboardingViewBody extends StatelessWidget {
               height: 150,
             ),
             const SizedBox(height: 40),
-            const Text(
+            Text(
               "Your Workout\nCompanion",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
+              style: TextStyles.bold22.copyWith(
                 color: AppColors.kBlackColor,
               ),
             ),
             const SizedBox(height: 15),
-            const Text(
+            Text(
               "Track your daily workouts & watch your progress!",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
+              style: TextStyles.bold16.copyWith(
                 color: AppColors.kBlack54Color,
-                fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 40),

@@ -1,4 +1,5 @@
-import '../../../core/utils/constants.dart';
+import '../../../../core/utils/constants.dart';
+
 import '../data/models/sign_up_request_body.dart';
 import '../data/models/sign_up_response_model.dart';
 import 'package:dio/dio.dart';

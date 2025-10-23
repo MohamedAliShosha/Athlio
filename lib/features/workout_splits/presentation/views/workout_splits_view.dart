@@ -1,4 +1,4 @@
-import '../../../../core/functions/build_app_bar.dart';
+import '../../../../core/widgets/build_app_bar.dart';
 import '../widgets/workout_splits_view_body.dart';
 import 'package:flutter/material.dart';
 
