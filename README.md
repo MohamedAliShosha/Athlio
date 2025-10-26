@@ -4,7 +4,7 @@
 - Athlio is a Flutter app that helps users track workouts, browse exercises and explore different workout splits.
 
  <p align="center">
-  <img src="assets/screen_shots/Athlio All Views.png" alt="App Overview" width="800"/>
+  <img src="assets/screen_shots/Athlio_All_Views.png" alt="App Overview" width="800"/>
 </p>
 
 
