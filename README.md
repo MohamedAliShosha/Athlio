@@ -147,8 +147,6 @@ assets/
 - **presentation/widgets/**: UI components and reusable widgets specific to each feature.
 - **assets/**: Static resources such as images and icons.
 - **main.dart**: App entry point.
-- **injection_container.dart**: Dependency injection setup.
-
 ---
 
 **This structure is scalable, modular, and easy to maintain as your app grows.**
