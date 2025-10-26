@@ -6,6 +6,7 @@ class ExerciseDetailsDialogTextField extends StatelessWidget {
     super.key,
     required this.controller,
     required this.hintText,
+    this.keyboardType,
     this.validator,
     this.autovalidateMode,
   });
@@ -14,10 +15,12 @@ class ExerciseDetailsDialogTextField extends StatelessWidget {
   final String hintText;
   final String? Function(String?)? validator;
   final AutovalidateMode? autovalidateMode;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: keyboardType,
       validator: validator,
       autovalidateMode: autovalidateMode,
       cursorColor: AppColors.kWhiteColor,

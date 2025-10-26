@@ -47,7 +47,7 @@ class _ExerciseItemState extends State<ExerciseItem> {
                     children: [
                       Text(
                         widget.exerciseModel.exerciseName,
-                        style: TextStyles.bold18.copyWith(
+                        style: TextStyles.bold16.copyWith(
                           color: Colors.black,
                         ),
                       ),

@@ -22,6 +22,7 @@ class _ExerciseDetailsDialogState extends State<ExerciseDetailsDialog> {
   final TextEditingController numberOfRepsController = TextEditingController();
   final TextEditingController numberOfSetsController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
   @override
   void dispose() {
@@ -55,6 +56,7 @@ class _ExerciseDetailsDialogState extends State<ExerciseDetailsDialog> {
             ),
             const SizedBox(height: 10),
             ExerciseDetailsDialogTextField(
+              keyboardType: TextInputType.number,
               validator: (data) {
                 if (data == null || data.isEmpty) {
                   return 'Please enter weight / ادخل الوزن';
@@ -67,6 +69,7 @@ class _ExerciseDetailsDialogState extends State<ExerciseDetailsDialog> {
             ),
             const SizedBox(height: 10),
             ExerciseDetailsDialogTextField(
+              keyboardType: TextInputType.number,
               validator: (data) {
                 if (data == null || data.isEmpty) {
                   return 'Please enter number of reps / ادخل عدد التكرارات';
@@ -79,6 +82,7 @@ class _ExerciseDetailsDialogState extends State<ExerciseDetailsDialog> {
             ),
             const SizedBox(height: 10),
             ExerciseDetailsDialogTextField(
+              keyboardType: TextInputType.number,
               validator: (data) {
                 if (data == null || data.isEmpty) {
                   return 'Please enter number of sets / ادخل عدد المجموعات';
@@ -110,6 +114,10 @@ class _ExerciseDetailsDialogState extends State<ExerciseDetailsDialog> {
               );
               await BlocProvider.of<ExerciseCubit>(context)
                   .addExercise(exerciseModel);
+            } else {
+              setState(() {
+                autovalidateMode = AutovalidateMode.always;
+              });
             }
             Navigator.pop(context);
           },
