@@ -8,11 +8,11 @@ class WorkoutModel extends HiveObject {
   @HiveField(0)
   final String workoutName;
   @HiveField(1)
-  final String date;
+  String? date;
   @HiveField(2)
   String? id;
 
-  WorkoutModel({required this.workoutName, required this.date, String? id})
+  WorkoutModel({required this.workoutName, this.date, String? id})
       // Creating a unique id for each added model
       : id = id ?? const Uuid().v4();
 }

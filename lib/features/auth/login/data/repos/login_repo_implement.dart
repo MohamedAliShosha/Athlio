@@ -20,8 +20,19 @@ class LoginRepoImplement implements LoginRepo {
       final response = await loginService.login(loginRequestBody);
       return Right(response);
     } on DioException catch (e) {
+      if (e.response != null && e.response?.data != null) {
+        // Server responded with an error
+        return Left(LoginApiErrorModel.fromJson(e.response!.data));
+      } else {
+        // No response (network, SSL, timeout, etc.)
+        return Left(LoginApiErrorModel(message: e.message ?? 'Unknown error'));
+      }
+    } catch (e) {
+      // Any other error
       return Left(
-        LoginApiErrorModel.fromJson(e.response?.data),
+        LoginApiErrorModel(
+          message: e.toString(),
+        ),
       );
     }
   }

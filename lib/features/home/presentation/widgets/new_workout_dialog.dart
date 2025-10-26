@@ -4,7 +4,6 @@ import '../manager/add_workout/add_workout_cubit.dart';
 import '../../../exercises/presentation/widgets/exercise_details_dialog_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 
 class NewWorkoutDialog extends StatefulWidget {
   const NewWorkoutDialog({super.key});
@@ -64,14 +63,11 @@ class _NewWorkoutDialogState extends State<NewWorkoutDialog> {
               if (formKey.currentState!.validate()) {
                 // Get the entered workout name
                 final workoutName = workoutController.text.trim();
-                final now = DateTime.now();
-                final formattedDate =
-                    DateFormat('EEEE, MMM d, yyyy').format(now);
+
                 // Save workout logic
                 await addWorkoutCubit.addWorkout(
                   WorkoutModel(
                     workoutName: workoutName,
-                    date: formattedDate, // Default to current date
                   ),
                 );
 

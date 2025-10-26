@@ -18,7 +18,7 @@ class WorkoutModelAdapter extends TypeAdapter<WorkoutModel> {
     };
     return WorkoutModel(
       workoutName: fields[0] as String,
-      date: fields[1] as String,
+      date: fields[1] as String?,
       id: fields[2] as String?,
     );
   }

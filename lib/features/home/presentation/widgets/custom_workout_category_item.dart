@@ -24,8 +24,6 @@ class CustomWorkoutCategoryItem extends StatefulWidget {
 }
 
 class _CustomWorkoutCategoryItemState extends State<CustomWorkoutCategoryItem> {
-  String? selectedDate;
-
   Future<void> _pickDate() async {
     final now = DateTime.now();
     final pickedDate = await showDatePicker(
@@ -43,10 +41,12 @@ class _CustomWorkoutCategoryItemState extends State<CustomWorkoutCategoryItem> {
     );
 
     if (pickedDate != null) {
+      final formattedDate = DateFormat('EEEE, dd/MM/yyyy').format(pickedDate);
+
       setState(() {
-        // Formatted date will "be DayName, dd/MM/yyyy" => Friday, 25/05/2023
-        selectedDate = DateFormat('EEEE, dd/MM/yyyy').format(pickedDate);
+        widget.workoutModel.date = formattedDate;
       });
+      await widget.workoutModel.save();
     }
   }
 
@@ -80,7 +80,7 @@ class _CustomWorkoutCategoryItemState extends State<CustomWorkoutCategoryItem> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        selectedDate ?? "Pick a date",
+                        widget.workoutModel.date ?? "Pick a date",
                         style: TextStyles.regular16.copyWith(
                           color: AppColors.kWhiteColor,
                         ),
