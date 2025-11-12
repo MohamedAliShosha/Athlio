@@ -9,7 +9,7 @@
 
 
 ## ✨Views
-🖼️ Onboarding View:
+🖼️ **Onboarding View:**
   - Welcomes users to Athlio, the ultimate workout companion app
   - Includes the app logo
   - Motivational tagline — “Track your daily exercise & watch your progress!”
@@ -21,7 +21,7 @@
 
 ##
 
-🔐 Login View:
+🔐 **Login View:**
   - 📧 Allows registered users to sign in using Email and Password
   - 🆕 “Register now” navigation button for new users
   - ✅ On successful login, users are directed to the Workout View
@@ -30,7 +30,7 @@
   
   ##
 
-📝 Sign-Up View:
+📝 **Sign-Up View:**
   - 📝 Enables new users to create an account by entering: Name, Email, Phone, Password, and Confirm Password
   - ✅ On successful sign-up, users are directed to the Workout View
   - ↩️ "Already have an account?" option
@@ -42,7 +42,7 @@
 
 ##
 
-🏠 Workout View:
+🏠 **Workout View:**
   - 💪 Displays the list of workouts (e.g., Chest, Back, Arms, Shoulders, Legs)
   - 🗓️ Each workout card shows the date and muscle group
   - ➕ Users can add a new workout via the Floating Action Button (FAB)
@@ -53,7 +53,7 @@
 
 ##
 
-📂 Navigation Drawer:
+📂 **Navigation Drawer:**
   - 🧭 Provides quick access to main app sections: Profile and Workout Splits
   - 📲 Opens from the side menu icon for seamless navigation
 
@@ -63,7 +63,7 @@
 
 ##
 
-🏋️‍♀️ Exercises View:
+🏋️‍♀️ **Exercises View:**
   - 📋 Displays all exercises related to the selected workout (e.g., Bench Press, Cable Cross)
   - 🏷️ Each card includes exercise name, sets, reps, and weights
   - ✅ Completed exercises are highlighted in green
@@ -75,7 +75,7 @@
 
 ##
 
-🧩 Workout Splits View:
+🧩 **Workout Splits View:**
   - 🧠 Displays available training programs such as: Pro Split, Push Pull Legs, Upper & Lower, Arnold Split, Full Body
   - 📖 Each split includes a short description of its focus and structure
 
@@ -85,8 +85,8 @@
 
 ##
 
-👤 Profile View:
-  - 🪪 Displays user info including Name, and Email
+👤 **Profile View:**
+  - 🪪 Displays user info, including Name and Email
   - 🚪 Includes a Logout button for secure sign-out
 
 <p align="left">
@@ -147,8 +147,6 @@ assets/
 - **presentation/widgets/**: UI components and reusable widgets specific to each feature.
 - **assets/**: Static resources such as images and icons.
 - **main.dart**: App entry point.
-- **injection_container.dart**: Dependency injection setup.
-
 ---
 
 **This structure is scalable, modular, and easy to maintain as your app grows.**
