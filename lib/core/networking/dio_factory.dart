@@ -1,7 +1,7 @@
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import '../utils/constants.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioFactory {
   final Dio _dio = Dio(); // Dio instance
