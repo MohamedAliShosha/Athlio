@@ -1,0 +1,39 @@
+import '../../../../core/utils/app_colors.dart';
+import '../manager/add_workout/add_workout_cubit.dart';
+import 'new_workout_dialog.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+class AddWorkoutFloatingActionButton extends StatelessWidget {
+  const AddWorkoutFloatingActionButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      shape: const CircleBorder(),
+      backgroundColor: Colors.black87,
+      onPressed: () {
+        showDialog(
+          context: context,
+          /*
+            - Providing the cubit first for the home view to give an instance to the floating action button, then using BlocProvider.value() to inject it into the dialog
+            - Using BlocProvider.value() enables me to:
+          ✅ Reuses the existing Cubit "WorkoutCubit that provided for HomeView" instance from the current context  
+          ✅ Injects it into the dialog
+          ✅ Ensures both the main screen and the dialog share the same Cubit
+           */
+          builder: (_) => BlocProvider.value(
+            value: BlocProvider.of<WorkoutCubit>(context),
+            child: const NewWorkoutDialog(),
+          ),
+        );
+      },
+      child: const Icon(
+        Icons.add,
+        color: AppColors.kWhiteColor,
+      ),
+    );
+  }
+}
